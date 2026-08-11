@@ -1,200 +1,263 @@
 <!DOCTYPE html>
 
-<html class="dark" lang="en"><head>
+<html class="light" lang="en"><head>
 <meta charset="utf-8"/>
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-<title>Hisui - Links</title>
+<title>Link in Bio // hisurei</title>
 <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;700;800&amp;family=JetBrains+Mono:wght@500;700&amp;family=Inter:wght@400&amp;family=Noto+Sans+JP:wght@900&amp;display=swap" rel="stylesheet"/>
 <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
 <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
 <script id="tailwind-config">
         tailwind.config = {
-            darkMode: "class",
-            theme: {
-                extend: {
-                    colors: {
-                        "surface-container-high": "#252a32",
-                        "background": "#0f141b",
-                        "error-container": "#93000a",
-                        "surface-container-low": "#171c23",
-                        "surface-tint": "#c5c6cc",
-                        "on-primary": "#2e3035",
-                        "on-error-container": "#ffdad6",
-                        "secondary": "#b8c6ef",
-                        "tertiary": "#c6c6c7",
-                        "error": "#ffb4ab",
-                        "primary-fixed": "#e2e2e8",
-                        "on-background": "#dee2ec",
-                        "on-tertiary-container": "#787979",
-                        "surface-container-highest": "#30353d",
-                        "on-primary-fixed": "#191c20",
-                        "on-primary-container": "#77797e",
-                        "tertiary-fixed": "#e2e2e2",
-                        "on-surface-variant": "#c6c6cb",
-                        "primary": "#c5c6cc",
-                        "secondary-fixed-dim": "#b8c6ef",
-                        "primary-container": "#07090d",
-                        "surface": "#0f141b",
-                        "secondary-container": "#3a486b",
-                        "on-secondary-fixed": "#0a1a3a",
-                        "inverse-surface": "#dee2ec",
-                        "on-secondary": "#213050",
-                        "inverse-primary": "#5d5e63",
-                        "surface-dim": "#0f141b",
-                        "tertiary-container": "#070909",
-                        "outline": "#909095",
-                        "on-primary-fixed-variant": "#45474c",
-                        "secondary-fixed": "#d9e2ff",
-                        "surface-bright": "#343941",
-                        "tertiary-fixed-dim": "#c6c6c7",
-                        "on-secondary-container": "#aab8e0",
-                        "surface-variant": "#30353d",
-                        "surface-container-lowest": "#090f15",
-                        "inverse-on-surface": "#2c3138",
-                        "primary-fixed-dim": "#c5c6cc",
-                        "on-tertiary-fixed": "#1a1c1c",
-                        "on-tertiary-fixed-variant": "#454747",
-                        "on-error": "#690005",
-                        "surface-container": "#1b2027",
-                        "outline-variant": "#45474b",
-                        "on-tertiary": "#2f3131",
-                        "on-surface": "#dee2ec",
-                        "on-secondary-fixed-variant": "#384668"
-                    },
-                    borderRadius: {
-                        "DEFAULT": "0.25rem",
-                        "lg": "0.5rem",
-                        "xl": "0.75rem",
-                        "full": "9999px"
-                    },
-                    spacing: {
-                        "max-width": "480px",
-                        "stack-gap": "12px",
-                        "section-margin": "40px",
-                        "container-padding": "24px"
-                    },
-                    fontFamily: {
-                        "bio-text": ["Inter"],
-                        "display-name": ["Inter"],
-                        "link-label": ["Inter"],
-                        "social-tag": ["Inter"],
-                        "display-name-mobile": ["Inter"]
-                    },
-                    fontSize: {
-                        "bio-text": ["16px", { lineHeight: "24px", letterSpacing: "0em", fontWeight: "400" }],
-                        "display-name": ["24px", { lineHeight: "32px", letterSpacing: "-0.02em", fontWeight: "600" }],
-                        "link-label": ["15px", { lineHeight: "20px", letterSpacing: "0.01em", fontWeight: "500" }],
-                        "social-tag": ["12px", { lineHeight: "16px", letterSpacing: "0.05em", fontWeight: "400" }],
-                        "display-name-mobile": ["20px", { lineHeight: "28px", fontWeight: "600" }]
-                    }
-                }
+          darkMode: "class",
+          theme: {
+            extend: {
+              "colors": {
+                      "tertiary": "#5d5e67",
+                      "surface-bright": "#f8f9fa",
+                      "on-error-container": "#93000a",
+                      "surface-container": "#edeeef",
+                      "inverse-on-surface": "#f0f1f2",
+                      "surface-tint": "#626200",
+                      "on-primary-container": "#757500",
+                      "error-container": "#ffdad6",
+                      "on-error": "#ffffff",
+                      "secondary-fixed": "#e5e1e4",
+                      "surface-container-highest": "#e1e3e4",
+                      "tertiary-fixed": "#e3e1ed",
+                      "primary-container": "#ffff01",
+                      "primary-fixed-dim": "#cdcd00",
+                      "secondary": "#5f5e60",
+                      "surface-container-lowest": "#ffffff",
+                      "on-tertiary-fixed-variant": "#46464f",
+                      "surface-container-high": "#e7e8e9",
+                      "on-secondary-fixed-variant": "#474649",
+                      "tertiary-fixed-dim": "#c6c5d1",
+                      "tertiary-container": "#f8f6ff",
+                      "error": "#ba1a1a",
+                      "primary": "#626200",
+                      "on-background": "#191c1d",
+                      "surface-container-low": "#f3f4f5",
+                      "on-tertiary-container": "#70707a",
+                      "inverse-surface": "#2e3132",
+                      "on-surface": "#191c1d",
+                      "secondary-container": "#e5e1e4",
+                      "on-surface-variant": "#484831",
+                      "secondary-fixed-dim": "#c8c6c8",
+                      "inverse-primary": "#cdcd00",
+                      "on-tertiary": "#ffffff",
+                      "on-secondary-container": "#656466",
+                      "outline-variant": "#cac8aa",
+                      "on-primary-fixed-variant": "#494900",
+                      "surface-dim": "#d9dadb",
+                      "on-secondary-fixed": "#1c1b1d",
+                      "surface": "#f8f9fa",
+                      "primary-fixed": "#eaea00",
+                      "on-tertiary-fixed": "#1a1b23",
+                      "background": "#f8f9fa",
+                      "on-primary": "#ffffff",
+                      "on-secondary": "#ffffff",
+                      "surface-variant": "#e1e3e4",
+                      "outline": "#79785f",
+                      "on-primary-fixed": "#1d1d00"
+              },
+              "borderRadius": {
+                      "DEFAULT": "0.25rem",
+                      "lg": "0.5rem",
+                      "xl": "0.75rem",
+                      "full": "9999px"
+              },
+              "spacing": {
+                      "grid-margin": "2rem",
+                      "grid-gutter": "1px",
+                      "stack-sm": "8px",
+                      "stack-md": "16px",
+                      "stack-lg": "32px",
+                      "unit": "4px"
+              },
+              "fontFamily": {
+                      "headline-lg-mobile": ["Sora"],
+                      "headline-xl": ["Sora"],
+                      "code-sm": ["JetBrains Mono"],
+                      "headline-lg": ["Sora"],
+                      "label-xs": ["JetBrains Mono"],
+                      "body-md": ["Inter"],
+                      "jp": ["Noto Sans JP"]
+              },
+              "fontSize": {
+                      "headline-lg-mobile": ["24px", {"lineHeight": "1.2", "fontWeight": "700"}],
+                      "headline-xl": ["48px", {"lineHeight": "1.1", "letterSpacing": "-0.02em", "fontWeight": "800"}],
+                      "code-sm": ["12px", {"lineHeight": "1.4", "letterSpacing": "0.05em", "fontWeight": "500"}],
+                      "headline-lg": ["32px", {"lineHeight": "1.2", "letterSpacing": "-0.01em", "fontWeight": "700"}],
+                      "label-xs": ["10px", {"lineHeight": "1", "fontWeight": "700"}],
+                      "body-md": ["16px", {"lineHeight": "1.6", "fontWeight": "400"}]
+              }
             }
-        };
+          }
+        }
     </script>
 <style>
+        /* Minimal custom CSS for grid lines and specific borders where tailwind isn't enough */
         body {
-            background: linear-gradient(135deg, #07090d, #0a1a3a);
-            min-height: 100vh;
+            background-color: #f8f9fa;
+            background-image: 
+                linear-gradient(to right, #e1e3e4 1px, transparent 1px),
+                linear-gradient(to bottom, #e1e3e4 1px, transparent 1px);
+            background-size: 20px 20px;
+            background-position: center;
         }
-        .glass-panel {
-            background: rgba(23, 28, 35, 0.6);
-            backdrop-filter: blur(12px);
-            -webkit-backdrop-filter: blur(12px);
-            border: 1px solid rgba(255, 255, 255, 0.1);
+        .hud-crosshair::before, .hud-crosshair::after {
+            content: '';
+            position: absolute;
+            background-color: #191c1d;
         }
-        .link-tile {
-            transition: transform 0.2s ease, background-color 0.2s ease;
-        }
-        .link-tile:hover {
-            transform: scale(0.98);
-            background: rgba(23, 28, 35, 0.8);
+        .hud-crosshair::before { width: 10px; height: 1px; top: 50%; left: -5px; transform: translateY(-50%); }
+        .hud-crosshair::after { width: 1px; height: 10px; left: 50%; top: -5px; transform: translateX(-50%); }
+        
+        .barcode {
+            background: repeating-linear-gradient(
+                90deg,
+                #191c1d,
+                #191c1d 2px,
+                transparent 2px,
+                transparent 4px,
+                #191c1d 4px,
+                #191c1d 5px,
+                transparent 5px,
+                transparent 8px
+            );
         }
     </style>
 </head>
-<body class="text-on-surface font-bio-text antialiased">
-<!-- TopAppBar Semantic Shell - Hidden for this layout but structural command honored -->
-<!-- Nav Structure: flex justify-center w-full max-w-max-width mx-auto px-container-padding pt-8 -->
-<header class="flex justify-center w-full max-w-max-width mx-auto px-container-padding pt-8 bg-transparent flat no shadows hidden md:flex">
-<h1 class="text-primary dark:text-primary-fixed-dim text-display-name-mobile font-display-name-mobile font-bold tracking-tight">Hisui</h1>
+<body class="text-on-background font-body-md antialiased min-h-screen flex justify-center items-start pt-8 pb-16 relative overflow-x-hidden">
+<!-- Mobile Container -->
+<div class="w-full max-w-[430px] bg-background border border-on-background/10 relative shadow-2xl min-h-screen flex flex-col">
+<!-- Frame Greebles -->
+<div class="absolute top-0 left-0 w-full h-full pointer-events-none z-0">
+<div class="absolute top-2 left-2 text-surface-tint font-label-xs text-label-xs">345° 89' 67"</div>
+<div class="absolute top-2 right-2 text-surface-tint font-label-xs text-label-xs">STATUS: ACTIVE</div>
+<div class="absolute bottom-2 left-2 text-surface-tint font-label-xs text-label-xs">LINK.DATABASE</div>
+<!-- Corner Brackets -->
+<div class="absolute top-4 left-4 w-4 h-4 border-t-2 border-l-2 border-on-background"></div>
+<div class="absolute top-4 right-4 w-4 h-4 border-t-2 border-r-2 border-on-background"></div>
+<div class="absolute bottom-4 left-4 w-4 h-4 border-b-2 border-l-2 border-on-background"></div>
+<div class="absolute bottom-4 right-4 w-4 h-4 border-b-2 border-r-2 border-on-background"></div>
+</div>
+<main class="relative z-10 flex flex-col px-6 py-12 gap-12 w-full">
+<!-- HERO -->
+<section class="flex flex-col items-center text-center gap-4 relative">
+<!-- Top technical line -->
+<div class="w-full border-t border-on-background/20 relative flex justify-between items-center py-1">
+<span class="font-label-xs text-label-xs uppercase tracking-widest text-on-surface-variant">Identity //</span>
+<div class="w-16 h-2 barcode"></div>
+</div>
+<div class="relative">
+<h1 class="font-jp text-6xl font-black text-on-background tracking-tighter leading-none mt-4">ヒスレイ</h1>
+<div class="absolute -right-4 -top-2 bg-primary-container text-on-primary-fixed font-code-sm text-code-sm px-2 py-0.5 border border-on-background">
+                        SYS // 01
+                    </div>
+</div>
+<h2 class="font-headline-xl text-headline-xl text-on-background mt-2">hisurei</h2>
+<div class="flex items-center gap-2 mt-2">
+<span class="w-1.5 h-1.5 bg-primary-container rounded-none block border border-on-background"></span>
+<span class="font-label-xs text-label-xs text-on-surface-variant tracking-[0.2em] uppercase">Tactical Node Online</span>
+</div>
+</section>
+<!-- SECTION 01 // CONTACT -->
+<section class="flex flex-col gap-6 relative">
+<header class="flex items-center gap-3 border-b border-on-background/20 pb-2 relative">
+<div class="w-1 h-6 bg-primary-container border border-on-background"></div>
+<h3 class="font-headline-lg-mobile text-headline-lg-mobile text-on-background">01 // CONTACT</h3>
+<div class="flex-grow"></div>
+<div class="relative w-3 h-3 hud-crosshair"></div>
 </header>
-<main class="w-full max-w-max-width mx-auto px-container-padding pb-section-margin pt-12 md:pt-0">
-<!-- Identity Block -->
-<section class="flex flex-col items-center text-center mb-section-margin">
-<div class="w-24 h-24 rounded-full overflow-hidden mb-4 border border-outline-variant shadow-lg">
-<img alt="Avatar" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuC8i_nvHeELt_JaTGBWXR3iWpmZDZhhyLbB6c8SBOTe35IVbZgT50_muEtHusUrAxHDFcQLCeI4keUptfycKUdyuUDGhcdlQXoK19yqQRGXTxmjJCfdEFxmoIYBu6CjykNLqcL0QDr6PKuK3KOO4EFVUVUDYu-qCYcEWc3F7cBThjQYx5JrROCXnaI87-gxdFnz1cIv4nzgt-pm1DT8qHD30KOxFiPMxf7nzkw6lxU8WW-MQb9Mb2iG"/>
+<div class="flex flex-col gap-3">
+<!-- Discord -->
+<a class="group relative flex items-center justify-between p-4 bg-surface-container-lowest border border-on-background transition-colors hover:bg-surface-container-low" href="#">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-on-background" style="font-variation-settings: 'FILL' 1;">forum</span>
+<span class="font-code-sm text-code-sm uppercase font-bold text-on-background tracking-wider">Discord</span>
 </div>
-<h2 class="font-display-name text-display-name text-on-surface mb-2">Hisui</h2>
-<p class="font-bio-text text-bio-text text-on-surface-variant max-w-[320px]">
-                I'm not a content creator, these are just links to my profiles.
-            </p>
-</section>
-<!-- Section 1: Connect -->
-<section class="mb-section-margin">
-<h3 class="font-social-tag text-social-tag text-on-surface-variant uppercase mb-4 text-center">Connect</h3>
-<div class="flex flex-col gap-stack-gap">
-<a class="link-tile glass-panel rounded-xl p-4 flex items-center justify-between text-on-surface" href="#">
-<div class="flex flex-col">
-<span class="font-link-label text-link-label">discord.com</span>
-<span class="font-social-tag text-social-tag text-on-surface-variant">hisuirei</span>
+<div class="flex items-center gap-2 bg-surface-container py-1 px-3 border border-on-background/20">
+<div class="w-1 h-1 bg-primary-container"></div>
+<span class="font-label-xs text-label-xs text-on-background">hisurei</span>
 </div>
-<span class="material-symbols-outlined text-on-surface-variant">arrow_forward</span>
 </a>
-<a class="link-tile glass-panel rounded-xl p-4 flex items-center justify-between text-on-surface" href="#">
-<div class="flex flex-col">
-<span class="font-link-label text-link-label">telegram.org</span>
-<span class="font-social-tag text-social-tag text-on-surface-variant">@KeyHisuBot</span>
+<!-- Telegram -->
+<a class="group relative flex items-center justify-between p-4 bg-surface-container-lowest border border-on-background transition-colors hover:bg-surface-container-low" href="#">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-on-background" style="font-variation-settings: 'FILL' 1;">send</span>
+<span class="font-code-sm text-code-sm uppercase font-bold text-on-background tracking-wider">Telegram</span>
 </div>
-<span class="material-symbols-outlined text-on-surface-variant">arrow_forward</span>
+<div class="flex items-center gap-2 bg-surface-container py-1 px-3 border border-on-background/20">
+<span class="font-label-xs text-label-xs text-on-background">@KeyHisuBot</span>
+</div>
 </a>
 </div>
 </section>
-<!-- Section 2: Social Grid -->
-<section class="mb-section-margin">
-<h3 class="font-social-tag text-social-tag text-on-surface-variant uppercase mb-4 text-center">Socials</h3>
-<div class="grid grid-cols-4 gap-4">
-<a class="link-tile glass-panel rounded-xl p-3 flex flex-col items-center justify-center gap-2 text-on-surface aspect-square" href="#">
-<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">videogame_asset</span>
-<span class="font-social-tag text-social-tag text-on-surface-variant">Steam</span>
+<!-- SECTION 02 // PLATFORMS -->
+<section class="flex flex-col gap-6 relative">
+<header class="flex items-center gap-3 border-b border-on-background/20 pb-2 relative">
+<div class="w-1 h-6 bg-primary-container border border-on-background"></div>
+<h3 class="font-headline-lg-mobile text-headline-lg-mobile text-on-background">02 // PLATFORMS</h3>
+<div class="flex-grow"></div>
+<div class="font-label-xs text-label-xs text-on-surface-variant uppercase">[ 8 Nodes ]</div>
+</header>
+<div class="grid grid-cols-2 gap-3 relative">
+<!-- Crosshair center grid -->
+<div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-4 h-4 hud-crosshair pointer-events-none z-10 hidden md:block"></div>
+<!-- Platform Cards Array -->
+<!-- 1 -->
+<a class="relative flex flex-col p-4 bg-surface-container-lowest border border-on-background group hover:bg-on-background hover:text-on-primary transition-colors" href="#">
+<div class="absolute top-0 right-0 w-0 h-0 border-t-8 border-l-8 border-t-primary-container border-l-transparent"></div>
+<span class="material-symbols-outlined mb-2 group-hover:text-primary-container" style="font-variation-settings: 'FILL' 0;">sports_esports</span>
+<span class="font-label-xs text-label-xs uppercase">Twitch</span>
 </a>
-<a class="link-tile glass-panel rounded-xl p-3 flex flex-col items-center justify-center gap-2 text-on-surface aspect-square" href="#">
-<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">live_tv</span>
-<span class="font-social-tag text-social-tag text-on-surface-variant">Twitch</span>
+<!-- 2 -->
+<a class="relative flex flex-col p-4 bg-surface-container-lowest border border-on-background group hover:bg-on-background hover:text-on-primary transition-colors" href="#">
+<div class="absolute top-0 right-0 w-0 h-0 border-t-8 border-l-8 border-t-primary-container border-l-transparent"></div>
+<span class="material-symbols-outlined mb-2 group-hover:text-primary-container" style="font-variation-settings: 'FILL' 0;">play_circle</span>
+<span class="font-label-xs text-label-xs uppercase">YouTube</span>
 </a>
-<a class="link-tile glass-panel rounded-xl p-3 flex flex-col items-center justify-center gap-2 text-on-surface aspect-square" href="#">
-<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">play_circle</span>
-<span class="font-social-tag text-social-tag text-on-surface-variant">YouTube</span>
+<!-- 3 -->
+<a class="relative flex flex-col p-4 bg-surface-container-lowest border border-on-background group hover:bg-on-background hover:text-on-primary transition-colors" href="#">
+<div class="absolute top-0 right-0 w-0 h-0 border-t-8 border-l-8 border-t-primary-container border-l-transparent"></div>
+<span class="material-symbols-outlined mb-2 group-hover:text-primary-container" style="font-variation-settings: 'FILL' 0;">stadia_controller</span>
+<span class="font-label-xs text-label-xs uppercase">Steam</span>
 </a>
-<a class="link-tile glass-panel rounded-xl p-3 flex flex-col items-center justify-center gap-2 text-on-surface aspect-square" href="#">
-<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">music_note</span>
-<span class="font-social-tag text-social-tag text-on-surface-variant">Spotify</span>
+<!-- 4 -->
+<a class="relative flex flex-col p-4 bg-surface-container-lowest border border-on-background group hover:bg-on-background hover:text-on-primary transition-colors" href="#">
+<div class="absolute top-0 right-0 w-0 h-0 border-t-8 border-l-8 border-t-primary-container border-l-transparent"></div>
+<span class="material-symbols-outlined mb-2 group-hover:text-primary-container" style="font-variation-settings: 'FILL' 0;">graphic_eq</span>
+<span class="font-label-xs text-label-xs uppercase">Spotify</span>
 </a>
-</div>
-</section>
-<!-- Section 3: Additional Links -->
-<section>
-<h3 class="font-social-tag text-social-tag text-on-surface-variant uppercase mb-4 text-center">More</h3>
-<div class="flex flex-col gap-stack-gap">
-<a class="link-tile glass-panel rounded-xl p-4 flex items-center gap-4 text-on-surface" href="#">
-<span class="material-symbols-outlined text-primary-fixed-dim" style="font-variation-settings: 'FILL' 1;">alternate_email</span>
-<span class="font-link-label text-link-label flex-1 text-center">X (Twitter)</span>
-<div class="w-6"></div> <!-- Balance spacer -->
+<!-- 5 -->
+<a class="relative flex flex-col p-4 bg-surface-container-lowest border border-on-background group hover:bg-on-background hover:text-on-primary transition-colors" href="#">
+<div class="absolute top-0 right-0 w-0 h-0 border-t-8 border-l-8 border-t-primary-container border-l-transparent"></div>
+<span class="material-symbols-outlined mb-2 group-hover:text-primary-container" style="font-variation-settings: 'FILL' 0;">music_note</span>
+<span class="font-label-xs text-label-xs uppercase">TikTok</span>
 </a>
-<a class="link-tile glass-panel rounded-xl p-4 flex items-center gap-4 text-on-surface" href="#">
-<span class="material-symbols-outlined text-primary-fixed-dim" style="font-variation-settings: 'FILL' 1;">star</span>
-<span class="font-link-label text-link-label flex-1 text-center">Shikimori (anime)</span>
-<div class="w-6"></div>
+<!-- 6 -->
+<a class="relative flex flex-col p-4 bg-surface-container-lowest border border-on-background group hover:bg-on-background hover:text-on-primary transition-colors" href="#">
+<div class="absolute top-0 right-0 w-0 h-0 border-t-8 border-l-8 border-t-primary-container border-l-transparent"></div>
+<span class="material-symbols-outlined mb-2 group-hover:text-primary-container" style="font-variation-settings: 'FILL' 0;">close</span>
+<span class="font-label-xs text-label-xs uppercase">X</span>
 </a>
-<a class="link-tile glass-panel rounded-xl p-4 flex items-center gap-4 text-on-surface" href="#">
-<span class="material-symbols-outlined text-primary-fixed-dim" style="font-variation-settings: 'FILL' 1;">movie</span>
-<span class="font-link-label text-link-label flex-1 text-center">IMDb (films)</span>
-<div class="w-6"></div>
+<!-- 7 -->
+<a class="relative flex flex-col p-4 bg-surface-container-lowest border border-on-background group hover:bg-on-background hover:text-on-primary transition-colors" href="#">
+<div class="absolute top-0 right-0 w-0 h-0 border-t-8 border-l-8 border-t-primary-container border-l-transparent"></div>
+<span class="material-symbols-outlined mb-2 group-hover:text-primary-container" style="font-variation-settings: 'FILL' 0;">movie</span>
+<span class="font-label-xs text-label-xs uppercase">Shikimori</span>
+</a>
+<!-- 8 -->
+<a class="relative flex flex-col p-4 bg-surface-container-lowest border border-on-background group hover:bg-on-background hover:text-on-primary transition-colors" href="#">
+<div class="absolute top-0 right-0 w-0 h-0 border-t-8 border-l-8 border-t-primary-container border-l-transparent"></div>
+<span class="material-symbols-outlined mb-2 group-hover:text-primary-container" style="font-variation-settings: 'FILL' 0;">theaters</span>
+<span class="font-label-xs text-label-xs uppercase">IMDb</span>
 </a>
 </div>
 </section>
 </main>
-<!-- BottomNavBar Semantic Shell - Hidden as this is a terminal link page -->
-<nav class="fixed bottom-0 w-full z-50 flex justify-around items-center px-container-padding py-4 max-w-max-width left-1/2 -translate-x-1/2 bg-surface-container-low/60 backdrop-blur-xl rounded-t-xl hidden md:hidden">
-<!-- Elements hidden by structural mandate -->
-</nav>
+</div>
 </body></html>
