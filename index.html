@@ -1,390 +1,200 @@
 <!DOCTYPE html>
-<html lang="ru">
-<head>
-<meta charset="UTF-8">
-<title>Каталог сна</title>
 
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Hisui - Links</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "surface-container-high": "#252a32",
+                        "background": "#0f141b",
+                        "error-container": "#93000a",
+                        "surface-container-low": "#171c23",
+                        "surface-tint": "#c5c6cc",
+                        "on-primary": "#2e3035",
+                        "on-error-container": "#ffdad6",
+                        "secondary": "#b8c6ef",
+                        "tertiary": "#c6c6c7",
+                        "error": "#ffb4ab",
+                        "primary-fixed": "#e2e2e8",
+                        "on-background": "#dee2ec",
+                        "on-tertiary-container": "#787979",
+                        "surface-container-highest": "#30353d",
+                        "on-primary-fixed": "#191c20",
+                        "on-primary-container": "#77797e",
+                        "tertiary-fixed": "#e2e2e2",
+                        "on-surface-variant": "#c6c6cb",
+                        "primary": "#c5c6cc",
+                        "secondary-fixed-dim": "#b8c6ef",
+                        "primary-container": "#07090d",
+                        "surface": "#0f141b",
+                        "secondary-container": "#3a486b",
+                        "on-secondary-fixed": "#0a1a3a",
+                        "inverse-surface": "#dee2ec",
+                        "on-secondary": "#213050",
+                        "inverse-primary": "#5d5e63",
+                        "surface-dim": "#0f141b",
+                        "tertiary-container": "#070909",
+                        "outline": "#909095",
+                        "on-primary-fixed-variant": "#45474c",
+                        "secondary-fixed": "#d9e2ff",
+                        "surface-bright": "#343941",
+                        "tertiary-fixed-dim": "#c6c6c7",
+                        "on-secondary-container": "#aab8e0",
+                        "surface-variant": "#30353d",
+                        "surface-container-lowest": "#090f15",
+                        "inverse-on-surface": "#2c3138",
+                        "primary-fixed-dim": "#c5c6cc",
+                        "on-tertiary-fixed": "#1a1c1c",
+                        "on-tertiary-fixed-variant": "#454747",
+                        "on-error": "#690005",
+                        "surface-container": "#1b2027",
+                        "outline-variant": "#45474b",
+                        "on-tertiary": "#2f3131",
+                        "on-surface": "#dee2ec",
+                        "on-secondary-fixed-variant": "#384668"
+                    },
+                    borderRadius: {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    spacing: {
+                        "max-width": "480px",
+                        "stack-gap": "12px",
+                        "section-margin": "40px",
+                        "container-padding": "24px"
+                    },
+                    fontFamily: {
+                        "bio-text": ["Inter"],
+                        "display-name": ["Inter"],
+                        "link-label": ["Inter"],
+                        "social-tag": ["Inter"],
+                        "display-name-mobile": ["Inter"]
+                    },
+                    fontSize: {
+                        "bio-text": ["16px", { lineHeight: "24px", letterSpacing: "0em", fontWeight: "400" }],
+                        "display-name": ["24px", { lineHeight: "32px", letterSpacing: "-0.02em", fontWeight: "600" }],
+                        "link-label": ["15px", { lineHeight: "20px", letterSpacing: "0.01em", fontWeight: "500" }],
+                        "social-tag": ["12px", { lineHeight: "16px", letterSpacing: "0.05em", fontWeight: "400" }],
+                        "display-name-mobile": ["20px", { lineHeight: "28px", fontWeight: "600" }]
+                    }
+                }
+            }
+        };
+    </script>
 <style>
-
-body {
-  font-family: Arial;
-  margin: 0;
-}
-
-header {
-  background: #222;
-  color: white;
-  padding: 10px;
-}
-
-nav a {
-  color: white;
-  margin-right: 10px;
-  text-decoration: none;
-}
-
-nav a:hover {
-  color: orange;
-}
-
-.grid {
- display: grid;
- grid-template-columns: repeat(3, 1fr);
- gap: 20px;
- padding: 20px;
-}
-
-.card {
- border: 1px solid #ccc;
- padding: 10px;
-}
-
-.card img {
- width: 100%;
-}
-
-.btn {
- background: black;
- color: white;
- padding: 8px;
- border: none;
- cursor: pointer;
-}
-
-.btn:hover {
- background: orange;
-}
-
-.section {
- padding: 20px;
-}
-
-.review {
- border: 1px solid black;
- padding: 10px;
- margin-bottom: 10px;
-}
-
-.footer {
- background: #111;
- color: white;
- padding: 20px;
-}
-
-.extraVar { color: red; }
-#unused123 { margin: 3px; }
-
-</style>
-
+        body {
+            background: linear-gradient(135deg, #07090d, #0a1a3a);
+            min-height: 100vh;
+        }
+        .glass-panel {
+            background: rgba(23, 28, 35, 0.6);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        .link-tile {
+            transition: transform 0.2s ease, background-color 0.2s ease;
+        }
+        .link-tile:hover {
+            transform: scale(0.98);
+            background: rgba(23, 28, 35, 0.8);
+        }
+    </style>
 </head>
-
-<body>
-
-
-<header>
-<h1>Товары для сна</h1>
-<nav>
-<a href="#">Главная</a>
-<a href="#">Каталог</a>
-<a href="#">Контакты</a>
-</nav>
+<body class="text-on-surface font-bio-text antialiased">
+<!-- TopAppBar Semantic Shell - Hidden for this layout but structural command honored -->
+<!-- Nav Structure: flex justify-center w-full max-w-max-width mx-auto px-container-padding pt-8 -->
+<header class="flex justify-center w-full max-w-max-width mx-auto px-container-padding pt-8 bg-transparent flat no shadows hidden md:flex">
+<h1 class="text-primary dark:text-primary-fixed-dim text-display-name-mobile font-display-name-mobile font-bold tracking-tight">Hisui</h1>
 </header>
-
-<div style="display: flex; gap: 15px; padding: 15px; background: #f5f5f5;">
-<div style="background: white; border-radius: 25px; padding: 10px; flex: 2; text-align: center;">
-<img src="images/baner.jpg" style="width: 60%; border-radius: 20px;">
-<p style="margin-top: 8px; font-weight: medium;">Скидка 20% на первый заказ</p>
-<p style="font-size: 12px; color: gray;">Промо: SLEEP20</p>
-<a href="#" style="color:#111 "> Перейти </a>
+<main class="w-full max-w-max-width mx-auto px-container-padding pb-section-margin pt-12 md:pt-0">
+<!-- Identity Block -->
+<section class="flex flex-col items-center text-center mb-section-margin">
+<div class="w-24 h-24 rounded-full overflow-hidden mb-4 border border-outline-variant shadow-lg">
+<img alt="Avatar" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuC8i_nvHeELt_JaTGBWXR3iWpmZDZhhyLbB6c8SBOTe35IVbZgT50_muEtHusUrAxHDFcQLCeI4keUptfycKUdyuUDGhcdlQXoK19yqQRGXTxmjJCfdEFxmoIYBu6CjykNLqcL0QDr6PKuK3KOO4EFVUVUDYu-qCYcEWc3F7cBThjQYx5JrROCXnaI87-gxdFnz1cIv4nzgt-pm1DT8qHD30KOxFiPMxf7nzkw6lxU8WW-MQb9Mb2iG"/>
 </div>
-
-<div style="background: white; border-radius: 25px; padding: 10px; flex: 2; text-align: center;">
-<img src="images/baner.jpg" style="width: 60%; border-radius: 20px;">
-<p style="margin-top: 8px; font-weight: medium;">Бесплатная доставка от 3000р.</p>
-<p style="font-size: 12px; color: gray;">Для всех регионов</p>
-<a href="#" style="color:#111 "> Перейти </a>
+<h2 class="font-display-name text-display-name text-on-surface mb-2">Hisui</h2>
+<p class="font-bio-text text-bio-text text-on-surface-variant max-w-[320px]">
+                I'm not a content creator, these are just links to my profiles.
+            </p>
+</section>
+<!-- Section 1: Connect -->
+<section class="mb-section-margin">
+<h3 class="font-social-tag text-social-tag text-on-surface-variant uppercase mb-4 text-center">Connect</h3>
+<div class="flex flex-col gap-stack-gap">
+<a class="link-tile glass-panel rounded-xl p-4 flex items-center justify-between text-on-surface" href="#">
+<div class="flex flex-col">
+<span class="font-link-label text-link-label">discord.com</span>
+<span class="font-social-tag text-social-tag text-on-surface-variant">hisuirei</span>
 </div>
-
-<div style="background: white; border-radius: 25px; padding: 10px; flex: 2; text-align: center;">
-<img src="images/baner.jpg" style="width: 60%; border-radius: 20px;">
-<p style="margin-top: 8px; font-weight: medium;">Подарок при заказе</p>
-<p style="font-size: 12px; color: gray;">Маска для сна в подарок</p>
-<a href="#" style="color:#111 "> Перейти </a> 
+<span class="material-symbols-outlined text-on-surface-variant">arrow_forward</span>
+</a>
+<a class="link-tile glass-panel rounded-xl p-4 flex items-center justify-between text-on-surface" href="#">
+<div class="flex flex-col">
+<span class="font-link-label text-link-label">telegram.org</span>
+<span class="font-social-tag text-social-tag text-on-surface-variant">@KeyHisuBot</span>
 </div>
+<span class="material-symbols-outlined text-on-surface-variant">arrow_forward</span>
+</a>
 </div>
-
-
-<div class="section">
-<h2>О важности сна</h2>
-
-<p>Сон является важной частью жизни человека. Без нормального сна невозможно поддерживать здоровье и продуктивность.</p>
-<p>Во время сна организм восстанавливается и происходит обновление клеток.</p>
-<p>Качественный сон помогает улучшить память и концентрацию.</p>
-<p>Недостаток сна может привести к стрессу и ухудшению состояния.</p>
-<p>Очень важно соблюдать режим сна.</p>
-
-<p>Сон влияет на настроение человека и его поведение в течение дня.</p>
-<p>Также он влияет на физическое здоровье и иммунитет.</p>
-<p>Хороший сон помогает быстрее восстанавливаться после нагрузок.</p>
-<p>При плохом сне снижается работоспособность.</p>
-<p>Поэтому важно уделять внимание качеству сна.</p>
-
-<blockquote>Качественный сон — залог здоровья и хорошего настроения</blockquote>
-
-<p>Подбор правильных аксессуаров для сна играет большую роль.</p>
-<p>Комфортная подушка может снизить нагрузку на шею.</p>
-<p>Одеяло должно быть подходящим по температуре.</p>
-<p>Освещение в комнате также важно.</p>
-<p>Наличие посторонних шумов может мешать отдыху.</p>
-
-<p>Также важно проветривать помещение перед сном.</p>
-<p>Регулярный сон улучшает общее состояние организма.</p>
-<p>Важно ложиться спать и вставать в одно и то же время.</p>
-<p>Это помогает организму привыкнуть к режиму.</p>
-<p>Чем стабильнее режим, тем лучше сон.</p>
-
-<p>Сон делится на несколько фаз: медленную и быструю.</p>
-<p>Каждая из них важна для полноценного отдыха.</p>
-<p>Нарушение фаз может привести к усталости даже после долгого сна.</p>
-<p>Поэтому нужно спать не менее 7-8 часов в сутки.</p>
-<p>Использование правильных аксессуаров помогает улучшить качество сна.</p>
-
-<p>Специалисты рекомендуют спать в полной темноте.</p>
-<p>Это способствует выработке мелатонина.</p>
-<p>Гормон мелатонин помогает быстрее засыпать.</p>
-<p>Также важно поддерживать прохладу в спальне.</p>
-<p>Оптимальная температура для сна — 18-20 градусов.</p>
-
-<p>Удобная постель и правильная подушка снижают нагрузку на позвоночник.</p>
-<p>Шум и свет мешают глубокому сну.</p>
-<p>Поэтому маски для сна и беруши могут быть полезны.</p>
-<p>Качественные материалы постельного белья улучшают комфорт.</p>
-<p>Натуральные ткани позволяют коже дышать.</p>
-
-<p>Избегайте тяжелой пищи перед сном.</p>
-<p>Кофеин и алкоголь нарушают структуру сна.</p>
-<p>Лучше выпить травяной чай или теплое молоко.</p>
-<p>Чтение книги или медитация помогают расслабиться.</p>
-<p>Постепенно отключайте электронные устройства за час до сна.</p>
-
+</section>
+<!-- Section 2: Social Grid -->
+<section class="mb-section-margin">
+<h3 class="font-social-tag text-social-tag text-on-surface-variant uppercase mb-4 text-center">Socials</h3>
+<div class="grid grid-cols-4 gap-4">
+<a class="link-tile glass-panel rounded-xl p-3 flex flex-col items-center justify-center gap-2 text-on-surface aspect-square" href="#">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">videogame_asset</span>
+<span class="font-social-tag text-social-tag text-on-surface-variant">Steam</span>
+</a>
+<a class="link-tile glass-panel rounded-xl p-3 flex flex-col items-center justify-center gap-2 text-on-surface aspect-square" href="#">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">live_tv</span>
+<span class="font-social-tag text-social-tag text-on-surface-variant">Twitch</span>
+</a>
+<a class="link-tile glass-panel rounded-xl p-3 flex flex-col items-center justify-center gap-2 text-on-surface aspect-square" href="#">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">play_circle</span>
+<span class="font-social-tag text-social-tag text-on-surface-variant">YouTube</span>
+</a>
+<a class="link-tile glass-panel rounded-xl p-3 flex flex-col items-center justify-center gap-2 text-on-surface aspect-square" href="#">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">music_note</span>
+<span class="font-social-tag text-social-tag text-on-surface-variant">Spotify</span>
+</a>
 </div>
-
-<div class="grid">
-
-<div class="card">
-<img src="images/pillow-memory.png">
-<h3>Подушка Memory</h3>
-<p>Цена: 2500₽</p>
-<p>Подушка повторяет форму головы и шеи. Обеспечивает правильное положение во время сна.</p>
-<p>Материал мягкий и приятный. Не вызывает аллергию и подходит для большинства людей.</p>
-<p>Используется современная пена с эффектом памяти.</p>
-<p>Помогает снизить боли в шее и спине.</p>
-<p>Подходит для ежедневного использования.</p>
-<p>Чехол легко снимается и стирается.</p>
-<p>Рекомендована врачами-ортопедами.</p>
-<button class="btn">Купить</button>
+</section>
+<!-- Section 3: Additional Links -->
+<section>
+<h3 class="font-social-tag text-social-tag text-on-surface-variant uppercase mb-4 text-center">More</h3>
+<div class="flex flex-col gap-stack-gap">
+<a class="link-tile glass-panel rounded-xl p-4 flex items-center gap-4 text-on-surface" href="#">
+<span class="material-symbols-outlined text-primary-fixed-dim" style="font-variation-settings: 'FILL' 1;">alternate_email</span>
+<span class="font-link-label text-link-label flex-1 text-center">X (Twitter)</span>
+<div class="w-6"></div> <!-- Balance spacer -->
+</a>
+<a class="link-tile glass-panel rounded-xl p-4 flex items-center gap-4 text-on-surface" href="#">
+<span class="material-symbols-outlined text-primary-fixed-dim" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="font-link-label text-link-label flex-1 text-center">Shikimori (anime)</span>
+<div class="w-6"></div>
+</a>
+<a class="link-tile glass-panel rounded-xl p-4 flex items-center gap-4 text-on-surface" href="#">
+<span class="material-symbols-outlined text-primary-fixed-dim" style="font-variation-settings: 'FILL' 1;">movie</span>
+<span class="font-link-label text-link-label flex-1 text-center">IMDb (films)</span>
+<div class="w-6"></div>
+</a>
 </div>
-
-<div class="card">
-<img src="images/blanket-knit.png">
-<h3>Плед вязаный</h3>
-<p>Цена: 3000₽</p>
-<p>Теплый и мягкий плед для комфортного отдыха.</p>
-<p>Подходит для зимы и прохладных вечеров.</p>
-<p>Материал приятный и долговечный.</p>
-<p>Легко стирается и сохраняет форму.</p>
-<p>Можно использовать дома и на даче.</p>
-<p>Размер 150х200 см.</p>
-<p>Подходит для уютных вечеров.</p>
-<button class="btn">Купить</button>
-</div>
-
-<div class="card">
-<img src="images/sleep-mask-silk.png">
-<h3>Маска для сна</h3>
-<p>Цена: 900₽</p>
-<p>Шелковая маска блокирует свет и помогает быстрее уснуть.</p>
-<p>Подходит для путешествий.</p>
-<p>Не вызывает дискомфорта при использовании.</p>
-<p>Легкая и компактная.</p>
-<p>Удобно брать с собой.</p>
-<p>Регулируемый ремешок.</p>
-<p>Натуральный шелк не раздражает кожу.</p>
-<button class="btn">Купить</button>
-</div>
-
-<div class="card">
-<img src="images/candle-aroma.png">
-<h3>Арома свеча</h3>
-<p>Цена: 1200₽</p>
-<p>Свеча с ароматом лаванды.</p>
-<p>Помогает расслабиться перед сном.</p>
-<p>Создает уютную атмосферу.</p>
-<p>Долгое время горения.</p>
-<p>Подходит для вечернего отдыха.</p>
-<p>Стеклянная банка безопасна.</p>
-<p>Можно использовать для ароматерапии.</p>
-<button class="btn">Купить</button>
-</div>
-
-<div class="card">
-<img src="images/duvet-light.png">
-<h3>Одеяло легкое</h3>
-<p>Цена: 4000₽</p>
-<p>Легкое одеяло для комфортного сна.</p>
-<p>Подходит для любого сезона.</p>
-<p>Хорошо сохраняет тепло.</p>
-<p>Не перегревает тело.</p>
-<p>Изготовлено из качественных материалов.</p>
-<p>Наполнитель из эвкалиптового волокна.</p>
-<p>Гипоаллергенное и дышащее.</p>
-<button class="btn">Купить</button>
-</div>
-
-<div class="card">
-<img src="images/mattress-topper.png">
-<h3>Наматрасник</h3>
-<p>Цена: 3500₽</p>
-<p>Повышает комфорт матраса.</p>
-<p>Делает поверхность мягче.</p>
-<p>Продлевает срок службы матраса.</p>
-<p>Легко крепится.</p>
-<p>Подходит для разных типов кроватей.</p>
-<p>Съемный чехол для стирки.</p>
-<p>Толщина 5 см.</p>
-<button class="btn">Купить</button>
-</div>
-
-</div>
-
-<div class="section">
-<h2>Преимущества магазина</h2>
-
-<ul>
-<li>Быстрая доставка по всей стране</li>
-<li>Качественные и проверенные товары</li>
-<li>Доступные цены для всех покупателей</li>
-<li>Гарантия возврата и обмена</li>
-<li>Поддержка клиентов 24/7</li>
-<li>Скидки постоянным покупателям</li>
-</ul>
-
-<p>Мы заботимся о клиентах и предлагаем только лучшие товары.</p>
-<p>Каждый продукт проходит проверку перед продажей.</p>
-<p>Наша цель — сделать ваш сон лучше.</p>
-<p>Мы работаем напрямую с производителями.</p>
-<p>Это позволяет держать низкие цены.</p>
-<p>Доставка осуществляется в любой регион.</p>
-<p>Вы можете вернуть товар в течение 14 дней.</p>
-<p>Оплата при получении доступна.</p>
-
-</div>
-
-<div class="section">
-<h2>Отзывы</h2>
-
-<div class="review">
-<p><strong>Анна:</strong> Подушка просто отличная. Сон стал лучше.</p>
-<p>Очень довольна покупкой и качеством.</p>
-<p>Шея перестала болеть по утрам.</p>
-</div>
-
-<div class="review">
-<p><strong>Иван:</strong> Плед теплый и удобный.</p>
-<p>Использую каждый день.</p>
-<p>Материал очень мягкий, не скатывается.</p>
-</div>
-
-<div class="review">
-<p><strong>Мария:</strong> Маска для сна помогает быстро уснуть.</p>
-<p>Рекомендую всем.</p>
-<p>Свет не мешает даже днем.</p>
-</div>
-
-<div class="review">
-<p><strong>Елена:</strong> Ароматическая свеча создает уют.</p>
-<p>Запах лаванды расслабляет.</p>
-<p>Горит долго, больше 40 часов.</p>
-</div>
-
-<div class="review">
-<p><strong>Сергей:</strong> Наматрасник очень удобный.</p>
-<p>Спать стало мягче и комфортнее.</p>
-<p>Крепление надежное, не съезжает.</p>
-</div>
-
-</div>
-
-<div class="section">
-<h2>Советы по сну</h2>
-
-<ol>
-<li>Ложитесь спать в одно и то же время каждый день.</li>
-<li>Избегайте яркого света перед сном.</li>
-<li>Проветривайте комнату перед отдыхом.</li>
-<li>Выбирайте правильную подушку и матрас.</li>
-<li>Не используйте гаджеты за час до сна.</li>
-<li>Пейте успокаивающие травяные чаи.</li>
-<li>Создавайте ритуал перед сном.</li>
-</ol>
-
-<p>Регулярный сон помогает улучшить здоровье.</p>
-<p>Создавайте комфортную атмосферу.</p>
-<p>Используйте удобные аксессуары.</p>
-
-<p>Важно избегать стресса перед сном.</p>
-<p>Можно слушать спокойную музыку.</p>
-<p>Или читать книгу.</p>
-<p>Проветривание снижает концентрацию углекислого газа.</p>
-<p>Это помогает быстрее заснуть и спать крепче.</p>
-
-<p>Постельное белье из натуральных тканей улучшает сон.</p>
-<p>Хлопок и лен пропускают воздух.</p>
-<p>Не используйте синтетику.</p>
-<p>Регулярно меняйте постельное белье.</p>
-<p>Чистота в спальне тоже важна.</p>
-
-<p>Попробуйте вести дневник сна.</p>
-<p>Это поможет отследить закономерности.</p>
-<p>Вы сможете понять, что мешает вам высыпаться.</p>
-<p>Обратите внимание на питание.</p>
-<p>Тяжелая пища перед сном ухудшает качество отдыха.</p>
-
-</div>
-
-<div class="section">
-<h2>Почему выбирают нас</h2>
-
-<p>Мы работаем на рынке товаров для сна более 5 лет.</p>
-<p>Наши покупатели возвращаются к нам снова и снова.</p>
-<p>Мы отбираем только проверенные бренды.</p>
-<p>Каждый товар проходит сертификацию.</p>
-<p>Мы предлагаем честные цены без наценок.</p>
-
-<p>Наши консультанты помогут подобрать товар.</p>
-<p>Вы можете задать вопросы по телефону или в чате.</p>
-<p>Мы поможем определиться с размером и типом изделия.</p>
-<p>Индивидуальный подход к каждому клиенту.</p>
-<p>Быстрая обработка заказов.</p>
-
-<p>У нас есть накопительная система скидок.</p>
-<p>Постоянные клиенты получают бонусы.</p>
-<p>Мы проводим акции и распродажи.</p>
-<p>Следите за новостями на сайте.</p>
-<p>Подпишитесь на рассылку.</p>
-
-</div>
-
-<footer class="footer">
-
-<p>Контакты:</p>
-<p>Email: sleep@shop.ru</p>
-<p>Телефон: 89999999999</p>
-<p>Адрес: г. Москва, ул. Сна, д. 1</p>
-<p>Режим работы: ежедневно с 10 до 20</p>
-<p>Мы в соцсетях: VK, Telegram</p>
-
-</footer>
-
-</body>
-</html>
+</section>
+</main>
+<!-- BottomNavBar Semantic Shell - Hidden as this is a terminal link page -->
+<nav class="fixed bottom-0 w-full z-50 flex justify-around items-center px-container-padding py-4 max-w-max-width left-1/2 -translate-x-1/2 bg-surface-container-low/60 backdrop-blur-xl rounded-t-xl hidden md:hidden">
+<!-- Elements hidden by structural mandate -->
+</nav>
+</body></html>
