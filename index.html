@@ -1,263 +1,525 @@
 <!DOCTYPE html>
-
-<html class="light" lang="en"><head>
+<html lang="en"><head>
 <meta charset="utf-8"/>
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-<title>Link in Bio // hisurei</title>
+<title>Identity Profile</title>
 <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
-<link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;700;800&amp;family=JetBrains+Mono:wght@500;700&amp;family=Inter:wght@400&amp;family=Noto+Sans+JP:wght@900&amp;display=swap" rel="stylesheet"/>
-<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
-<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
-<script id="tailwind-config">
-        tailwind.config = {
-          darkMode: "class",
-          theme: {
-            extend: {
-              "colors": {
-                      "tertiary": "#5d5e67",
-                      "surface-bright": "#f8f9fa",
-                      "on-error-container": "#93000a",
-                      "surface-container": "#edeeef",
-                      "inverse-on-surface": "#f0f1f2",
-                      "surface-tint": "#626200",
-                      "on-primary-container": "#757500",
-                      "error-container": "#ffdad6",
-                      "on-error": "#ffffff",
-                      "secondary-fixed": "#e5e1e4",
-                      "surface-container-highest": "#e1e3e4",
-                      "tertiary-fixed": "#e3e1ed",
-                      "primary-container": "#ffff01",
-                      "primary-fixed-dim": "#cdcd00",
-                      "secondary": "#5f5e60",
-                      "surface-container-lowest": "#ffffff",
-                      "on-tertiary-fixed-variant": "#46464f",
-                      "surface-container-high": "#e7e8e9",
-                      "on-secondary-fixed-variant": "#474649",
-                      "tertiary-fixed-dim": "#c6c5d1",
-                      "tertiary-container": "#f8f6ff",
-                      "error": "#ba1a1a",
-                      "primary": "#626200",
-                      "on-background": "#191c1d",
-                      "surface-container-low": "#f3f4f5",
-                      "on-tertiary-container": "#70707a",
-                      "inverse-surface": "#2e3132",
-                      "on-surface": "#191c1d",
-                      "secondary-container": "#e5e1e4",
-                      "on-surface-variant": "#484831",
-                      "secondary-fixed-dim": "#c8c6c8",
-                      "inverse-primary": "#cdcd00",
-                      "on-tertiary": "#ffffff",
-                      "on-secondary-container": "#656466",
-                      "outline-variant": "#cac8aa",
-                      "on-primary-fixed-variant": "#494900",
-                      "surface-dim": "#d9dadb",
-                      "on-secondary-fixed": "#1c1b1d",
-                      "surface": "#f8f9fa",
-                      "primary-fixed": "#eaea00",
-                      "on-tertiary-fixed": "#1a1b23",
-                      "background": "#f8f9fa",
-                      "on-primary": "#ffffff",
-                      "on-secondary": "#ffffff",
-                      "surface-variant": "#e1e3e4",
-                      "outline": "#79785f",
-                      "on-primary-fixed": "#1d1d00"
-              },
-              "borderRadius": {
-                      "DEFAULT": "0.25rem",
-                      "lg": "0.5rem",
-                      "xl": "0.75rem",
-                      "full": "9999px"
-              },
-              "spacing": {
-                      "grid-margin": "2rem",
-                      "grid-gutter": "1px",
-                      "stack-sm": "8px",
-                      "stack-md": "16px",
-                      "stack-lg": "32px",
-                      "unit": "4px"
-              },
-              "fontFamily": {
-                      "headline-lg-mobile": ["Sora"],
-                      "headline-xl": ["Sora"],
-                      "code-sm": ["JetBrains Mono"],
-                      "headline-lg": ["Sora"],
-                      "label-xs": ["JetBrains Mono"],
-                      "body-md": ["Inter"],
-                      "jp": ["Noto Sans JP"]
-              },
-              "fontSize": {
-                      "headline-lg-mobile": ["24px", {"lineHeight": "1.2", "fontWeight": "700"}],
-                      "headline-xl": ["48px", {"lineHeight": "1.1", "letterSpacing": "-0.02em", "fontWeight": "800"}],
-                      "code-sm": ["12px", {"lineHeight": "1.4", "letterSpacing": "0.05em", "fontWeight": "500"}],
-                      "headline-lg": ["32px", {"lineHeight": "1.2", "letterSpacing": "-0.01em", "fontWeight": "700"}],
-                      "label-xs": ["10px", {"lineHeight": "1", "fontWeight": "700"}],
-                      "body-md": ["16px", {"lineHeight": "1.6", "fontWeight": "400"}]
-              }
-            }
+<script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            'electric-yellow': '#dcf500',
+            'tech-gray': '#f5f5f5',
+            'dark-bg': '#1a1a1a'
+          },
+          fontFamily: {
+            'mono': ['"Space Mono"', 'monospace', 'sans-serif'],
+            'sans': ['"Helvetica Neue"', 'Arial', 'sans-serif']
+          },
+          backgroundImage: {
+            'tech-grid': 'linear-gradient(to right, #e5e5e5 1px, transparent 1px), linear-gradient(to bottom, #e5e5e5 1px, transparent 1px)'
+          },
+          backgroundSize: {
+            'tech-grid-size': '20px 20px'
           }
         }
-    </script>
-<style>
-        /* Minimal custom CSS for grid lines and specific borders where tailwind isn't enough */
-        body {
-            background-color: #f8f9fa;
-            background-image: 
-                linear-gradient(to right, #e1e3e4 1px, transparent 1px),
-                linear-gradient(to bottom, #e1e3e4 1px, transparent 1px);
-            background-size: 20px 20px;
-            background-position: center;
-        }
-        .hud-crosshair::before, .hud-crosshair::after {
-            content: '';
-            position: absolute;
-            background-color: #191c1d;
-        }
-        .hud-crosshair::before { width: 10px; height: 1px; top: 50%; left: -5px; transform: translateY(-50%); }
-        .hud-crosshair::after { width: 1px; height: 10px; left: 50%; top: -5px; transform: translateX(-50%); }
-        
-        .barcode {
-            background: repeating-linear-gradient(
-                90deg,
-                #191c1d,
-                #191c1d 2px,
-                transparent 2px,
-                transparent 4px,
-                #191c1d 4px,
-                #191c1d 5px,
-                transparent 5px,
-                transparent 8px
-            );
-        }
-    </style>
+      }
+    }
+  </script>
+<style data-purpose="custom-utilities">
+    @import url('https://fonts.googleapis.com/css2?family=Space+Mono:ital,wght@0,400;0,700;1,400;1,700&display=swap');
+
+    body {
+      background-color: #e5e5e5; /* Outer gray background */
+      display: flex;
+      justify-content: center;
+      margin: 0;
+      min-height: 100vh;
+      font-family: 'Space Mono', monospace;
+    }
+
+    .mobile-container {
+      width: 100%;
+      max-width: 430px; /* Mobile width constraint */
+      background-color: #f6f6f6;
+      border-left: 1px solid #d1d1d1;
+      border-right: 1px solid #d1d1d1;
+      position: relative;
+      overflow-x: hidden;
+    }
+    
+    .bg-tech-grid-overlay {
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background-image: linear-gradient(to right, rgba(0,0,0,0.03) 1px, transparent 1px), linear-gradient(to bottom, rgba(0,0,0,0.03) 1px, transparent 1px);
+      background-size: 20px 20px;
+      pointer-events: none;
+      z-index: 0;
+    }
+
+    /* Top border line */
+    .mobile-container::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 4px;
+      background-color: #e5e5e5;
+      z-index: 10;
+    }
+
+    .clip-card {
+      clip-path: polygon(
+        0 0,
+        calc(100% - 15px) 0,
+        100% 15px,
+        100% 100%,
+        0 100%
+      );
+    }
+    
+    .clip-button {
+      clip-path: polygon(
+        0 0,
+        100% 0,
+        100% calc(100% - 10px),
+        calc(100% - 10px) 100%,
+        0 100%
+      );
+    }
+
+    .vertical-text {
+      writing-mode: vertical-rl;
+      text-orientation: mixed;
+      transform: rotate(180deg);
+    }
+    
+    .barcode-line {
+      width: 2px;
+      height: 12px;
+      background-color: black;
+      display: inline-block;
+      margin-right: 2px;
+    }
+    .barcode-line.thick {
+      width: 4px;
+    }
+    .barcode-line.thin {
+      width: 1px;
+    }
+
+    .card-shadow {
+      position: relative;
+      z-index: 1;
+    }
+    .card-shadow::before {
+      content: '';
+      position: absolute;
+      top: 4px;
+      left: 4px;
+      right: -4px;
+      bottom: -4px;
+      background-color: black;
+      z-index: -1;
+      clip-path: polygon(
+        0 0,
+        calc(100% - 15px) 0,
+        100% 15px,
+        100% 100%,
+        0 100%
+      );
+    }
+    
+    .crosshair {
+      position: absolute;
+      width: 10px;
+      height: 10px;
+    }
+    .crosshair::before {
+      content: '';
+      position: absolute;
+      top: 50%;
+      left: 0;
+      right: 0;
+      height: 1px;
+      background: rgba(0,0,0,0.3);
+    }
+    .crosshair::after {
+      content: '';
+      position: absolute;
+      left: 50%;
+      top: 0;
+      bottom: 0;
+      width: 1px;
+      background: rgba(0,0,0,0.3);
+    }
+    
+    .hazard-stripes {
+      background: repeating-linear-gradient(
+        45deg,
+        transparent,
+        transparent 2px,
+        #dcf500 2px,
+        #dcf500 4px
+      );
+    }
+  </style>
 </head>
-<body class="text-on-background font-body-md antialiased min-h-screen flex justify-center items-start pt-8 pb-16 relative overflow-x-hidden">
-<!-- Mobile Container -->
-<div class="w-full max-w-[430px] bg-background border border-on-background/10 relative shadow-2xl min-h-screen flex flex-col">
-<!-- Frame Greebles -->
-<div class="absolute top-0 left-0 w-full h-full pointer-events-none z-0">
-<div class="absolute top-2 left-2 text-surface-tint font-label-xs text-label-xs">345° 89' 67"</div>
-<div class="absolute top-2 right-2 text-surface-tint font-label-xs text-label-xs">STATUS: ACTIVE</div>
-<div class="absolute bottom-2 left-2 text-surface-tint font-label-xs text-label-xs">LINK.DATABASE</div>
-<!-- Corner Brackets -->
-<div class="absolute top-4 left-4 w-4 h-4 border-t-2 border-l-2 border-on-background"></div>
-<div class="absolute top-4 right-4 w-4 h-4 border-t-2 border-r-2 border-on-background"></div>
-<div class="absolute bottom-4 left-4 w-4 h-4 border-b-2 border-l-2 border-on-background"></div>
-<div class="absolute bottom-4 right-4 w-4 h-4 border-b-2 border-r-2 border-on-background"></div>
+<body>
+<!-- BEGIN: MainContainer -->
+<main class="mobile-container pb-8 text-black" data-purpose="mobile-viewport">
+<div class="bg-tech-grid-overlay"></div>
+<div class="crosshair top-4 left-4"></div>
+<div class="crosshair top-4 right-4"></div>
+<div class="crosshair bottom-4 left-4"></div>
+<div class="crosshair bottom-4 right-4"></div>
+<div class="absolute top-8 right-2 text-[8px] font-bold text-gray-400 rotate-90 origin-right">SYS // NODE_08</div>
+<div class="relative z-10">
+<!-- BEGIN: TopHeader -->
+<header class="pt-6 px-6 pb-4" data-purpose="top-header">
+<div class="flex justify-between items-start text-[10px] text-gray-500 font-bold mb-6 tracking-widest">
+<span>345° 89' 67"</span>
+<span>STATUS: ACTIVE</span>
 </div>
-<main class="relative z-10 flex flex-col px-6 py-12 gap-12 w-full">
-<!-- HERO -->
-<section class="flex flex-col items-center text-center gap-4 relative">
-<!-- Top technical line -->
-<div class="w-full border-t border-on-background/20 relative flex justify-between items-center py-1">
-<span class="font-label-xs text-label-xs uppercase tracking-widest text-on-surface-variant">Identity //</span>
-<div class="w-16 h-2 barcode"></div>
+<div class="flex justify-between items-center border-b border-gray-300 pb-2 mb-8">
+<div class="text-xs font-bold tracking-widest">IDENTITY //</div>
+<div class="bg-electric-yellow border-2 border-black px-3 py-1 text-xs font-bold tracking-widest shadow-[2px_2px_0px_0px_rgba(0,0,0,1)] flex items-center gap-2">
+<div class="w-1.5 h-1.5 bg-black rounded-full animate-pulse"></div>
+          SYS // 01
+        </div>
 </div>
-<div class="relative">
-<h1 class="font-jp text-6xl font-black text-on-background tracking-tighter leading-none mt-4">ヒスレイ</h1>
-<div class="absolute -right-4 -top-2 bg-primary-container text-on-primary-fixed font-code-sm text-code-sm px-2 py-0.5 border border-on-background">
-                        SYS // 01
-                    </div>
+<div class="text-center mb-12 mt-8 relative">
+<div class="absolute top-0 left-0 text-[8px] font-bold text-gray-400">[ SECURE DATA ]</div>
+<div class="absolute bottom-0 right-0 text-[8px] font-bold text-gray-400">認証済み</div>
+<h1 class="text-8xl font-sans font-black tracking-tighter mb-2" style="font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;">ヒスレイ</h1>
+<h2 class="text-3xl font-sans font-black tracking-tight" style="font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;">hisurei</h2>
 </div>
-<h2 class="font-headline-xl text-headline-xl text-on-background mt-2">hisurei</h2>
-<div class="flex items-center gap-2 mt-2">
-<span class="w-1.5 h-1.5 bg-primary-container rounded-none block border border-on-background"></span>
-<span class="font-label-xs text-label-xs text-on-surface-variant tracking-[0.2em] uppercase">Tactical Node Online</span>
-</div>
-</section>
-<!-- SECTION 01 // CONTACT -->
-<section class="flex flex-col gap-6 relative">
-<header class="flex items-center gap-3 border-b border-on-background/20 pb-2 relative">
-<div class="w-1 h-6 bg-primary-container border border-on-background"></div>
-<h3 class="font-headline-lg-mobile text-headline-lg-mobile text-on-background">01 // CONTACT</h3>
-<div class="flex-grow"></div>
-<div class="relative w-3 h-3 hud-crosshair"></div>
 </header>
-<div class="flex flex-col gap-3">
+<!-- END: TopHeader -->
+<!-- BEGIN: ContactSection -->
+<section class="px-6 mb-12" data-purpose="contact-section">
+<div class="flex justify-between items-end border-b border-gray-300 pb-2 mb-6">
+<h3 class="text-2xl font-black font-sans tracking-tight flex items-center gap-2">
+<span class="w-1.5 h-6 bg-electric-yellow border border-black inline-block"></span>
+          01 // CONTACT
+        </h3>
+<div class="w-3 h-3 border-r-2 border-b-2 border-gray-400 mb-1"></div>
+</div>
+<div class="space-y-4">
 <!-- Discord -->
-<a class="group relative flex items-center justify-between p-4 bg-surface-container-lowest border border-on-background transition-colors hover:bg-surface-container-low" href="#">
+<div class="border-2 border-black bg-white p-4 flex justify-between items-center shadow-[2px_2px_0px_0px_rgba(0,0,0,1)] relative">
+<div class="absolute top-0 left-0 w-full h-0.5 hazard-stripes"></div>
 <div class="flex items-center gap-3">
-<span class="material-symbols-outlined text-on-background" style="font-variation-settings: 'FILL' 1;">forum</span>
-<span class="font-code-sm text-code-sm uppercase font-bold text-on-background tracking-wider">Discord</span>
+<svg class="w-6 h-6" fill="currentColor" viewbox="0 0 24 24"><path d="M20.317 4.3698a19.7913 19.7913 0 00-4.8851-1.5152.0741.0741 0 00-.0785.0371c-.211.3753-.4447.8648-.6083 1.2495-1.8447-.2762-3.68-.2762-5.4868 0-.1636-.3933-.4058-.8742-.6177-1.2495a.077.077 0 00-.0785-.037 19.7363 19.7363 0 00-4.8852 1.515.0699.0699 0 00-.0321.0277C.5334 9.0458-.319 13.5799.0992 18.0578a.0824.0824 0 00.0312.0561c2.0528 1.5076 4.0413 2.4228 5.9929 3.0294a.0777.0777 0 00.0842-.0276c.4616-.6304.8731-1.2952 1.226-1.9942a.076.076 0 00-.0416-.1057c-.6528-.2476-1.2743-.5495-1.8722-.8923a.077.077 0 01-.0076-.1277c.1258-.0943.2517-.1923.3718-.2914a.0743.0743 0 01.0776-.0105c3.9278 1.7933 8.18 1.7933 12.0614 0a.0739.0739 0 01.0785.0095c.1202.099.246.1981.3728.2924a.077.077 0 01-.0066.1276 12.2986 12.2986 0 01-1.873.8914.0766.0766 0 00-.0407.1067c.3604.698.7719 1.3628 1.225 1.9932a.076.076 0 00.0842.0286c1.961-.6067 3.9495-1.5219 6.0023-3.0294a.077.077 0 00.0313-.0552c.5004-5.177-.8382-9.6739-3.5485-13.6604a.061.061 0 00-.0312-.0286zM8.02 15.3312c-1.1825 0-2.1569-1.0857-2.1569-2.419 0-1.3332.9555-2.4189 2.157-2.4189 1.2108 0 2.1757 1.0952 2.1568 2.419 0 1.3332-.9555 2.4189-2.1569 2.4189zm7.9748 0c-1.1825 0-2.1569-1.0857-2.1569-2.419 0-1.3332.9554-2.4189 2.1569-2.4189 1.2108 0 2.1757 1.0952 2.1568 2.419 0 1.3332-.946 2.4189-2.1568 2.4189z"></path></svg>
+<span class="font-bold tracking-widest text-sm">DISCORD</span>
 </div>
-<div class="flex items-center gap-2 bg-surface-container py-1 px-3 border border-on-background/20">
-<div class="w-1 h-1 bg-primary-container"></div>
-<span class="font-label-xs text-label-xs text-on-background">hisurei</span>
+<div class="bg-gray-200 border border-black px-2 py-1 text-xs flex items-center gap-2 cursor-pointer hover:bg-gray-300 transition-colors" onclick="copyToClipboard(this, 'hisurei')">
+<span class="w-2 h-2 bg-electric-yellow inline-block border border-black"></span>
+<span class="font-bold underline copy-target">hisurei</span>
 </div>
-</a>
+</div>
 <!-- Telegram -->
-<a class="group relative flex items-center justify-between p-4 bg-surface-container-lowest border border-on-background transition-colors hover:bg-surface-container-low" href="#">
+<div class="border-2 border-black bg-white p-4 flex justify-between items-center shadow-[2px_2px_0px_0px_rgba(0,0,0,1)] relative">
+<div class="absolute top-0 left-0 w-full h-0.5 hazard-stripes"></div>
 <div class="flex items-center gap-3">
-<span class="material-symbols-outlined text-on-background" style="font-variation-settings: 'FILL' 1;">send</span>
-<span class="font-code-sm text-code-sm uppercase font-bold text-on-background tracking-wider">Telegram</span>
+<svg class="w-6 h-6" fill="currentColor" viewbox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm4.64 6.8c-.15 1.58-.8 5.42-1.13 7.19-.14.75-.42 1-.68 1.03-.58.05-1.02-.38-1.58-.75-.88-.58-1.38-.94-2.23-1.5-.99-.65-.35-1.01.22-1.59.15-.15 2.71-2.48 2.76-2.69a.2.2 0 00-.05-.18c-.06-.05-.14-.03-.21-.02-.09.02-1.49.95-4.22 2.79-.4.27-.76.41-1.08.4-.36-.01-1.04-.2-1.55-.37-.63-.2-1.12-.31-1.08-.66.02-.18.27-.36.74-.55 2.92-1.27 4.86-2.11 5.83-2.51 2.78-1.16 3.35-1.36 3.73-1.36.08 0 .27.02.39.12.1.08.13.19.14.27-.01.06.01.24 0 .38z"></path></svg>
+<span class="font-bold tracking-widest text-sm">TELEGRAM</span>
 </div>
-<div class="flex items-center gap-2 bg-surface-container py-1 px-3 border border-on-background/20">
-<span class="font-label-xs text-label-xs text-on-background">@KeyHisuBot</span>
+<div class="bg-gray-200 border border-black px-2 py-1 text-xs font-bold cursor-pointer hover:bg-gray-300 transition-colors" onclick="copyToClipboard(this, '@KeyHisuBot')">
+<span class="underline copy-target">@KeyHisuBot</span>
 </div>
-</a>
 </div>
-</section>
-<!-- SECTION 02 // PLATFORMS -->
-<section class="flex flex-col gap-6 relative">
-<header class="flex items-center gap-3 border-b border-on-background/20 pb-2 relative">
-<div class="w-1 h-6 bg-primary-container border border-on-background"></div>
-<h3 class="font-headline-lg-mobile text-headline-lg-mobile text-on-background">02 // PLATFORMS</h3>
-<div class="flex-grow"></div>
-<div class="font-label-xs text-label-xs text-on-surface-variant uppercase">[ 8 Nodes ]</div>
-</header>
-<div class="grid grid-cols-2 gap-3 relative">
-<!-- Crosshair center grid -->
-<div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-4 h-4 hud-crosshair pointer-events-none z-10 hidden md:block"></div>
-<!-- Platform Cards Array -->
-<!-- 1 -->
-<a class="relative flex flex-col p-4 bg-surface-container-lowest border border-on-background group hover:bg-on-background hover:text-on-primary transition-colors" href="#">
-<div class="absolute top-0 right-0 w-0 h-0 border-t-8 border-l-8 border-t-primary-container border-l-transparent"></div>
-<span class="material-symbols-outlined mb-2 group-hover:text-primary-container" style="font-variation-settings: 'FILL' 0;">sports_esports</span>
-<span class="font-label-xs text-label-xs uppercase">Twitch</span>
-</a>
-<!-- 2 -->
-<a class="relative flex flex-col p-4 bg-surface-container-lowest border border-on-background group hover:bg-on-background hover:text-on-primary transition-colors" href="#">
-<div class="absolute top-0 right-0 w-0 h-0 border-t-8 border-l-8 border-t-primary-container border-l-transparent"></div>
-<span class="material-symbols-outlined mb-2 group-hover:text-primary-container" style="font-variation-settings: 'FILL' 0;">play_circle</span>
-<span class="font-label-xs text-label-xs uppercase">YouTube</span>
-</a>
-<!-- 3 -->
-<a class="relative flex flex-col p-4 bg-surface-container-lowest border border-on-background group hover:bg-on-background hover:text-on-primary transition-colors" href="#">
-<div class="absolute top-0 right-0 w-0 h-0 border-t-8 border-l-8 border-t-primary-container border-l-transparent"></div>
-<span class="material-symbols-outlined mb-2 group-hover:text-primary-container" style="font-variation-settings: 'FILL' 0;">stadia_controller</span>
-<span class="font-label-xs text-label-xs uppercase">Steam</span>
-</a>
-<!-- 4 -->
-<a class="relative flex flex-col p-4 bg-surface-container-lowest border border-on-background group hover:bg-on-background hover:text-on-primary transition-colors" href="#">
-<div class="absolute top-0 right-0 w-0 h-0 border-t-8 border-l-8 border-t-primary-container border-l-transparent"></div>
-<span class="material-symbols-outlined mb-2 group-hover:text-primary-container" style="font-variation-settings: 'FILL' 0;">graphic_eq</span>
-<span class="font-label-xs text-label-xs uppercase">Spotify</span>
-</a>
-<!-- 5 -->
-<a class="relative flex flex-col p-4 bg-surface-container-lowest border border-on-background group hover:bg-on-background hover:text-on-primary transition-colors" href="#">
-<div class="absolute top-0 right-0 w-0 h-0 border-t-8 border-l-8 border-t-primary-container border-l-transparent"></div>
-<span class="material-symbols-outlined mb-2 group-hover:text-primary-container" style="font-variation-settings: 'FILL' 0;">music_note</span>
-<span class="font-label-xs text-label-xs uppercase">TikTok</span>
-</a>
-<!-- 6 -->
-<a class="relative flex flex-col p-4 bg-surface-container-lowest border border-on-background group hover:bg-on-background hover:text-on-primary transition-colors" href="#">
-<div class="absolute top-0 right-0 w-0 h-0 border-t-8 border-l-8 border-t-primary-container border-l-transparent"></div>
-<span class="material-symbols-outlined mb-2 group-hover:text-primary-container" style="font-variation-settings: 'FILL' 0;">close</span>
-<span class="font-label-xs text-label-xs uppercase">X</span>
-</a>
-<!-- 7 -->
-<a class="relative flex flex-col p-4 bg-surface-container-lowest border border-on-background group hover:bg-on-background hover:text-on-primary transition-colors" href="#">
-<div class="absolute top-0 right-0 w-0 h-0 border-t-8 border-l-8 border-t-primary-container border-l-transparent"></div>
-<span class="material-symbols-outlined mb-2 group-hover:text-primary-container" style="font-variation-settings: 'FILL' 0;">movie</span>
-<span class="font-label-xs text-label-xs uppercase">Shikimori</span>
-</a>
-<!-- 8 -->
-<a class="relative flex flex-col p-4 bg-surface-container-lowest border border-on-background group hover:bg-on-background hover:text-on-primary transition-colors" href="#">
-<div class="absolute top-0 right-0 w-0 h-0 border-t-8 border-l-8 border-t-primary-container border-l-transparent"></div>
-<span class="material-symbols-outlined mb-2 group-hover:text-primary-container" style="font-variation-settings: 'FILL' 0;">theaters</span>
-<span class="font-label-xs text-label-xs uppercase">IMDb</span>
-</a>
 </div>
 </section>
+<!-- END: ContactSection -->
+<!-- BEGIN: PlatformsSection -->
+<section class="px-6 mb-8" data-purpose="platforms-section">
+<div class="flex justify-between items-end border-b border-gray-300 pb-2 mb-6 relative">
+<h3 class="text-2xl font-black font-sans tracking-tight flex items-center gap-2">
+<span class="w-1.5 h-6 bg-electric-yellow border border-black inline-block"></span>
+          02 // PLATFORMS
+        </h3>
+<div class="text-[10px] font-bold tracking-widest text-gray-500 mb-1">[ 8 NODES ]</div>
+<div class="absolute top-0 right-0 text-[6px] text-gray-400">システム接続</div>
+</div>
+<div class="grid grid-cols-2 gap-4">
+<!-- Platform Card 1: STEAM -->
+<div class="card-shadow group">
+<div class="bg-electric-yellow border-2 border-black clip-card h-64 flex relative">
+<div class="w-8 border-r-2 border-black flex flex-col justify-between items-center py-2 shrink-0">
+<div class="vertical-text text-black font-black font-sans text-xl tracking-tighter">M56_UNIT</div>
+<div class="flex flex-col items-center gap-1">
+<div class="w-3 h-3 bg-black group-hover:bg-red-500 transition-colors"></div>
+<div class="text-[8px] font-bold">N_01</div>
+</div>
+</div>
+<div class="p-3 flex-1 flex flex-col relative overflow-hidden">
+<div class="absolute top-2 right-2 border border-black px-1 text-[6px] font-bold">STATUS: ONLINE</div>
+<div class="flex justify-between items-start mb-2 mt-4">
+<div class="text-3xl font-sans">五六</div>
+<div class="text-[8px] border-b border-black font-bold">@USER_ID</div>
+</div>
+<h4 class="text-2xl font-black font-sans tracking-tighter leading-none mb-1">STEAM_</h4>
+<div class="bg-black text-white text-[8px] px-1 inline-block w-max font-bold mb-2">[STATUS: ACTIVE]</div>
+<div class="border border-black text-[8px] px-1 w-max font-bold mb-1">NODE // 01</div>
+<div class="text-[8px] font-bold mb-1">COORD_35.6895</div>
+<div class="flex mb-auto items-center">
+<span class="barcode-line thick"></span><span class="barcode-line thin"></span><span class="barcode-line"></span><span class="barcode-line thick"></span>
+<span class="ml-2 text-[6px] font-bold text-gray-600">REQ.DATA</span>
+</div>
+<a href="https://steamcommunity.com/id/hisurei/" target="_blank" rel="noopener noreferrer" class="bg-black text-electric-yellow w-full py-2 clip-button flex items-center justify-center gap-2 mt-2 hover:bg-gray-800 transition-colors relative overflow-hidden group/btn">
+<div class="absolute top-0 right-0 bottom-0 w-2 hazard-stripes opacity-50"></div>
+<div class="w-1.5 h-1.5 rounded-full bg-electric-yellow shadow-[0_0_5px_#dcf500]"></div>
+<span class="text-[10px] font-bold tracking-widest leading-none text-center">INITIALIZE<br/>//</span>
+</a>
+</div>
+</div>
+</div>
+<!-- Platform Card 2: TIKTOK -->
+<div class="card-shadow group">
+<div class="bg-electric-yellow border-2 border-black clip-card h-64 flex relative">
+<div class="w-8 border-r-2 border-black flex flex-col justify-between items-center py-2 shrink-0">
+<div class="vertical-text text-black font-black font-sans text-xl tracking-tighter">M56_UNIT</div>
+<div class="flex flex-col items-center gap-1">
+<div class="w-3 h-3 bg-black group-hover:bg-red-500 transition-colors"></div>
+<div class="text-[8px] font-bold">N_02</div>
+</div>
+</div>
+<div class="p-3 flex-1 flex flex-col relative overflow-hidden">
+<div class="absolute top-2 right-2 border border-black px-1 text-[6px] font-bold">FREQ // 108.4MHz</div>
+<div class="flex justify-between items-start mb-2 mt-4">
+<div class="text-3xl font-sans">五六</div>
+<div class="text-[8px] border-b border-black font-bold">@USER_ID</div>
+</div>
+<h4 class="text-2xl font-black font-sans tracking-tighter leading-none mb-1">TIKTOK_</h4>
+<div class="bg-black text-white text-[8px] px-1 inline-block w-max font-bold mb-2">[STATUS: ACTIVE]</div>
+<div class="border border-black text-[8px] px-1 w-max font-bold mb-1">NODE // 02</div>
+<div class="text-[8px] font-bold mb-1">COORD_35.6895</div>
+<div class="flex mb-auto items-center">
+<span class="barcode-line thin"></span><span class="barcode-line thick"></span><span class="barcode-line thin"></span><span class="barcode-line"></span>
+</div>
+<a href="https://www.tiktok.com/@hisurei" target="_blank" rel="noopener noreferrer" class="bg-black text-electric-yellow w-full py-2 clip-button flex items-center justify-center gap-2 mt-2 hover:bg-gray-800 transition-colors relative overflow-hidden">
+<div class="absolute top-0 right-0 bottom-0 w-2 hazard-stripes opacity-50"></div>
+<div class="w-1.5 h-1.5 rounded-full bg-electric-yellow shadow-[0_0_5px_#dcf500]"></div>
+<span class="text-[10px] font-bold tracking-widest leading-none text-center">INITIALIZE<br/>//</span>
+</a>
+</div>
+</div>
+</div>
+<!-- Platform Card 3: SPOTIFY -->
+<div class="card-shadow group">
+<div class="bg-electric-yellow border-2 border-black clip-card h-64 flex relative">
+<div class="w-8 border-r-2 border-black flex flex-col justify-between items-center py-2 shrink-0">
+<div class="vertical-text text-black font-black font-sans text-xl tracking-tighter">M56_UNIT</div>
+<div class="flex flex-col items-center gap-1">
+<div class="w-3 h-3 bg-black group-hover:bg-red-500 transition-colors"></div>
+<div class="text-[8px] font-bold">N_03</div>
+</div>
+</div>
+<div class="p-3 flex-1 flex flex-col relative overflow-hidden">
+<div class="absolute top-2 right-2 border border-black px-1 text-[6px] font-bold">SIGNAL: 100%</div>
+<div class="flex justify-between items-start mb-2 mt-4">
+<div class="text-3xl font-sans">五六</div>
+<div class="text-[8px] border-b border-black font-bold">@USER_ID</div>
+</div>
+<h4 class="text-2xl font-black font-sans tracking-tighter leading-none mb-1 text-ellipsis overflow-hidden">SPOTIFY_</h4>
+<div class="bg-black text-white text-[8px] px-1 inline-block w-max font-bold mb-2">[STATUS: ACTIVE]</div>
+<div class="border border-black text-[8px] px-1 w-max font-bold mb-1">NODE // 03</div>
+<div class="text-[8px] font-bold mb-1">COORD_35.6895</div>
+<div class="flex mb-auto items-center">
+<span class="barcode-line thick"></span><span class="barcode-line"></span><span class="barcode-line thin"></span><span class="barcode-line thick"></span>
+</div>
+<a href="https://open.spotify.com/user/3166gqe2dvc5suvpmiq7iogbgoay?si=e8463ccd0d714970" target="_blank" rel="noopener noreferrer" class="bg-black text-electric-yellow w-full py-2 clip-button flex items-center justify-center gap-2 mt-2 hover:bg-gray-800 transition-colors relative overflow-hidden">
+<div class="absolute top-0 right-0 bottom-0 w-2 hazard-stripes opacity-50"></div>
+<div class="w-1.5 h-1.5 rounded-full bg-electric-yellow shadow-[0_0_5px_#dcf500]"></div>
+<span class="text-[10px] font-bold tracking-widest leading-none text-center">INITIALIZE<br/>//</span>
+</a>
+</div>
+</div>
+</div>
+<!-- Platform Card 4: SHIKIMORI -->
+<div class="card-shadow group">
+<div class="bg-electric-yellow border-2 border-black clip-card h-64 flex relative">
+<div class="w-8 border-r-2 border-black flex flex-col justify-between items-center py-2 shrink-0">
+<div class="vertical-text text-black font-black font-sans text-xl tracking-tighter">M56_UNIT</div>
+<div class="flex flex-col items-center gap-1">
+<div class="w-3 h-3 bg-black group-hover:bg-red-500 transition-colors"></div>
+<div class="text-[8px] font-bold">N_04</div>
+</div>
+</div>
+<div class="p-3 flex-1 flex flex-col relative overflow-hidden">
+<div class="absolute top-2 right-2 border border-black px-1 text-[6px] font-bold">LINK_READY</div>
+<div class="flex justify-between items-start mb-2 mt-4">
+<div class="text-3xl font-sans">五六</div>
+<div class="text-[8px] border-b border-black font-bold">@USER_ID</div>
+</div>
+<h4 class="text-[20px] font-black font-sans tracking-tighter leading-none mb-1 text-ellipsis overflow-hidden">SHIKIMORI_</h4>
+<div class="bg-black text-white text-[8px] px-1 inline-block w-max font-bold mb-2">[STATUS: ACTIVE]</div>
+<div class="border border-black text-[8px] px-1 w-max font-bold mb-1">NODE // 04</div>
+<div class="text-[8px] font-bold mb-1">COORD_35.6895</div>
+<div class="flex mb-auto items-center">
+<span class="barcode-line thin"></span><span class="barcode-line thin"></span><span class="barcode-line thick"></span><span class="barcode-line"></span>
+</div>
+<a href="https://shikimori.io/Hisurei" target="_blank" rel="noopener noreferrer" class="bg-black text-electric-yellow w-full py-2 clip-button flex items-center justify-center gap-2 mt-2 hover:bg-gray-800 transition-colors relative overflow-hidden">
+<div class="absolute top-0 right-0 bottom-0 w-2 hazard-stripes opacity-50"></div>
+<div class="w-1.5 h-1.5 rounded-full bg-electric-yellow shadow-[0_0_5px_#dcf500]"></div>
+<span class="text-[10px] font-bold tracking-widest leading-none text-center">INITIALIZE<br/>//</span>
+</a>
+</div>
+</div>
+</div>
+<!-- Platform Card 5: IMDB -->
+<div class="card-shadow group">
+<div class="bg-electric-yellow border-2 border-black clip-card h-64 flex relative">
+<div class="w-8 border-r-2 border-black flex flex-col justify-between items-center py-2 shrink-0">
+<div class="vertical-text text-black font-black font-sans text-xl tracking-tighter">M56_UNIT</div>
+<div class="flex flex-col items-center gap-1">
+<div class="w-3 h-3 bg-black group-hover:bg-red-500 transition-colors"></div>
+<div class="text-[8px] font-bold">N_05</div>
+</div>
+</div>
+<div class="p-3 flex-1 flex flex-col relative overflow-hidden">
+<div class="absolute top-2 right-2 border border-black px-1 text-[6px] font-bold">STATUS: ONLINE</div>
+<div class="flex justify-between items-start mb-2 mt-4">
+<div class="text-3xl font-sans">五六</div>
+<div class="text-[8px] border-b border-black font-bold">@USER_ID</div>
+</div>
+<h4 class="text-2xl font-black font-sans tracking-tighter leading-none mb-1">IMDB_</h4>
+<div class="bg-black text-white text-[8px] px-1 inline-block w-max font-bold mb-2">[STATUS: ACTIVE]</div>
+<div class="border border-black text-[8px] px-1 w-max font-bold mb-1">NODE // 05</div>
+<div class="text-[8px] font-bold mb-1">COORD_35.6895</div>
+<div class="flex mb-auto items-center">
+<span class="barcode-line thick"></span><span class="barcode-line thick"></span><span class="barcode-line thin"></span>
+</div>
+<a href="https://www.imdb.com/user/ur186197373/watchlist/?ref_=up_urwls_sm&sort=list_order,desc" target="_blank" rel="noopener noreferrer" class="bg-black text-electric-yellow w-full py-2 clip-button flex items-center justify-center gap-2 mt-2 hover:bg-gray-800 transition-colors relative overflow-hidden">
+<div class="absolute top-0 right-0 bottom-0 w-2 hazard-stripes opacity-50"></div>
+<div class="w-1.5 h-1.5 rounded-full bg-electric-yellow shadow-[0_0_5px_#dcf500]"></div>
+<span class="text-[10px] font-bold tracking-widest leading-none text-center">INITIALIZE<br/>//</span>
+</a>
+</div>
+</div>
+</div>
+<!-- Platform Card 6: X -->
+<div class="card-shadow group">
+<div class="bg-electric-yellow border-2 border-black clip-card h-64 flex relative">
+<div class="w-8 border-r-2 border-black flex flex-col justify-between items-center py-2 shrink-0">
+<div class="vertical-text text-black font-black font-sans text-xl tracking-tighter">M56_UNIT</div>
+<div class="flex flex-col items-center gap-1">
+<div class="w-3 h-3 bg-black group-hover:bg-red-500 transition-colors"></div>
+<div class="text-[8px] font-bold">N_06</div>
+</div>
+</div>
+<div class="p-3 flex-1 flex flex-col relative overflow-hidden">
+<div class="absolute top-2 right-2 border border-black px-1 text-[6px] font-bold">FREQ // 108.4MHz</div>
+<div class="flex justify-between items-start mb-2 mt-4">
+<div class="text-3xl font-sans">五六</div>
+<div class="text-[8px] border-b border-black font-bold">@USER_ID</div>
+</div>
+<h4 class="text-2xl font-black font-sans tracking-tighter leading-none mb-1">X_</h4>
+<div class="bg-black text-white text-[8px] px-1 inline-block w-max font-bold mb-2">[STATUS: ACTIVE]</div>
+<div class="border border-black text-[8px] px-1 w-max font-bold mb-1">NODE // 06</div>
+<div class="text-[8px] font-bold mb-1">COORD_35.6895</div>
+<div class="flex mb-auto items-center">
+<span class="barcode-line thin"></span><span class="barcode-line"></span><span class="barcode-line thick"></span><span class="barcode-line thin"></span>
+</div>
+<a href="https://x.com/Hisureii" target="_blank" rel="noopener noreferrer" class="bg-black text-electric-yellow w-full py-2 clip-button flex items-center justify-center gap-2 mt-2 hover:bg-gray-800 transition-colors relative overflow-hidden">
+<div class="absolute top-0 right-0 bottom-0 w-2 hazard-stripes opacity-50"></div>
+<div class="w-1.5 h-1.5 rounded-full bg-electric-yellow shadow-[0_0_5px_#dcf500]"></div>
+<span class="text-[10px] font-bold tracking-widest leading-none text-center">INITIALIZE<br/>//</span>
+</a>
+</div>
+</div>
+</div>
+<!-- Platform Card 7: YOUTUBE -->
+<div class="card-shadow group">
+<div class="bg-electric-yellow border-2 border-black clip-card h-64 flex relative">
+<div class="w-8 border-r-2 border-black flex flex-col justify-between items-center py-2 shrink-0">
+<div class="vertical-text text-black font-black font-sans text-xl tracking-tighter">M56_UNIT</div>
+<div class="flex flex-col items-center gap-1">
+<div class="w-3 h-3 bg-black group-hover:bg-red-500 transition-colors"></div>
+<div class="text-[8px] font-bold">N_07</div>
+</div>
+</div>
+<div class="p-3 flex-1 flex flex-col relative overflow-hidden">
+<div class="absolute top-2 right-2 border border-black px-1 text-[6px] font-bold">SIGNAL: 100%</div>
+<div class="flex justify-between items-start mb-2 mt-4">
+<div class="text-3xl font-sans">五六</div>
+<div class="text-[8px] border-b border-black font-bold">@USER_ID</div>
+</div>
+<h4 class="text-[22px] font-black font-sans tracking-tighter leading-none mb-1">YOUTUBE_</h4>
+<div class="bg-black text-white text-[8px] px-1 inline-block w-max font-bold mb-2">[STATUS: ACTIVE]</div>
+<div class="border border-black text-[8px] px-1 w-max font-bold mb-1">NODE // 07</div>
+<div class="text-[8px] font-bold mb-1">COORD_35.6895</div>
+<div class="flex mb-auto items-center">
+<span class="barcode-line thick"></span><span class="barcode-line"></span><span class="barcode-line thin"></span><span class="barcode-line thin"></span>
+</div>
+<a href="https://www.youtube.com/@Hisurei" target="_blank" rel="noopener noreferrer" class="bg-black text-electric-yellow w-full py-2 clip-button flex items-center justify-center gap-2 mt-2 hover:bg-gray-800 transition-colors relative overflow-hidden">
+<div class="absolute top-0 right-0 bottom-0 w-2 hazard-stripes opacity-50"></div>
+<div class="w-1.5 h-1.5 rounded-full bg-electric-yellow shadow-[0_0_5px_#dcf500]"></div>
+<span class="text-[10px] font-bold tracking-widest leading-none text-center">INITIALIZE<br/>//</span>
+</a>
+</div>
+</div>
+</div>
+<!-- Platform Card 8: TWITCH -->
+<div class="card-shadow group">
+<div class="bg-electric-yellow border-2 border-black clip-card h-64 flex relative">
+<div class="w-8 border-r-2 border-black flex flex-col justify-between items-center py-2 shrink-0">
+<div class="vertical-text text-black font-black font-sans text-xl tracking-tighter">M56_UNIT</div>
+<div class="flex flex-col items-center gap-1">
+<div class="w-3 h-3 bg-black group-hover:bg-red-500 transition-colors"></div>
+<div class="text-[8px] font-bold">N_08</div>
+</div>
+</div>
+<div class="p-3 flex-1 flex flex-col relative overflow-hidden">
+<div class="absolute top-2 right-2 border border-black px-1 text-[6px] font-bold">LINK_READY</div>
+<div class="flex justify-between items-start mb-2 mt-4">
+<div class="text-3xl font-sans">五六</div>
+<div class="text-[8px] border-b border-black font-bold">@USER_ID</div>
+</div>
+<h4 class="text-2xl font-black font-sans tracking-tighter leading-none mb-1">TWITCH_</h4>
+<div class="bg-black text-white text-[8px] px-1 inline-block w-max font-bold mb-2">[STATUS: ACTIVE]</div>
+<div class="border border-black text-[8px] px-1 w-max font-bold mb-1">NODE // 08</div>
+<div class="text-[8px] font-bold mb-1">COORD_35.6895</div>
+<div class="flex mb-auto items-center">
+<span class="barcode-line thin"></span><span class="barcode-line thick"></span><span class="barcode-line thick"></span><span class="barcode-line thin"></span>
+</div>
+<a href="https://www.twitch.tv/hisurei" target="_blank" rel="noopener noreferrer" class="bg-black text-electric-yellow w-full py-2 clip-button flex items-center justify-center gap-2 mt-2 hover:bg-gray-800 transition-colors relative overflow-hidden">
+<div class="absolute top-0 right-0 bottom-0 w-2 hazard-stripes opacity-50"></div>
+<div class="w-1.5 h-1.5 rounded-full bg-electric-yellow shadow-[0_0_5px_#dcf500]"></div>
+<span class="text-[10px] font-bold tracking-widest leading-none text-center">INITIALIZE<br/>//</span>
+</a>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- END: PlatformsSection -->
+<!-- Footer Note -->
+<div class="px-6 text-[10px] font-bold text-gray-500 tracking-widest mt-12 pb-4 flex justify-between">
+<span>LINK.DATABASE</span>
+<span class="text-[8px]">V 1.0.8</span>
+</div>
+</div>
 </main>
-</div>
+<!-- END: MainContainer -->
+<script>
+  function copyToClipboard(element, text) {
+    navigator.clipboard.writeText(text).then(function() {
+      const target = element.querySelector('.copy-target') || element;
+      const originalText = target.innerHTML;
+      target.innerHTML = 'COPIED //';
+      setTimeout(function() {
+        target.innerHTML = originalText;
+      }, 1500);
+    }).catch(function(err) {
+      console.error('Could not copy text: ', err);
+    });
+  }
+</script>
 </body></html>
