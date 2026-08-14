@@ -50,9 +50,30 @@
       background-color: #f6f6f6;
       position: relative;
       overflow-x: hidden;
-      transform: scale(1.8);
       transform-origin: top center;
+      /* На мобильных устройствах масштаб остается 1:1, мы убрали отсюда scale */
     }
+
+    /* === АДАПТИВНОСТЬ ДЛЯ ПЛАНШЕТОВ И ПК === */
+    
+    /* Для планшетов (экраны от 768px до 1023px) - средний масштаб */
+    @media (min-width: 768px) and (max-width: 1023px) {
+      .mobile-container {
+        transform: scale(1.4);
+        margin-top: 4vh;
+        margin-bottom: 400px; /* Компенсация высоты, чтобы скролл работал корректно */
+      }
+    }
+
+    /* Для мониторов ПК (экраны от 1024px и шире) - ваш масштаб 1.8 */
+    @media (min-width: 1024px) {
+      .mobile-container {
+        transform: scale(1.8);
+        margin-top: 6vh;
+        margin-bottom: 800px; /* Большая компенсация отступа снизу из-за сильного увеличения */
+      }
+    }
+    /* ========================================= */
     
     .bg-tech-grid-overlay {
       position: absolute;
