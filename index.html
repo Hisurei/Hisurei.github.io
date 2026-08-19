@@ -1,550 +1,461 @@
 <!DOCTYPE html>
-<html lang="en"><head>
-<meta charset="utf-8"/>
-<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-<title>Identity Profile</title>
-<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
-<script>
-    tailwind.config = {
-      theme: {
-        extend: {
-          colors: {
-            'electric-yellow': '#ffff01',
-            'tech-gray': '#f5f5f5',
-            'dark-bg': '#1a1a1a'
-          },
-          fontFamily: {
-            'mono': ['"Space Mono"', 'monospace', 'sans-serif'],
-            'sans': ['"Helvetica Neue"', 'Arial', 'sans-serif']
-          },
-          backgroundImage: {
-            'tech-grid': 'linear-gradient(to right, #e5e5e5 1px, transparent 1px), linear-gradient(to bottom, #e5e5e5 1px, transparent 1px)'
-          },
-          backgroundSize: {
-            'tech-grid-size': '20px 20px'
-          }
+<html class="dark" lang="en">
+<head>
+    <meta charset="utf-8"/>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+    <title>Hisurei</title>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+    <link href="https://fonts.googleapis.com/css2?family=Libre+Caslon+Text:ital,wght@0,400;0,700;1,400&amp;family=Manrope:wght@300;400;500;600&amp;display=swap" rel="stylesheet"/>
+    <link href="https://fonts.googleapis.com/css2?family=Shippori+Mincho:wght@400;500;600&amp;display=swap" rel="stylesheet"/>
+    
+    <script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "secondary-fixed": "#c3e8ff",
+                        "surface-container-highest": "#343538",
+                        "secondary-container": "#094c67",
+                        "surface-tint": "#9ccaff",
+                        "on-surface-variant": "#c1c7d1",
+                        "primary-container": "#085c96",
+                        "surface-container": "#1e2022",
+                        "inverse-primary": "#16629c",
+                        "surface-container-lowest": "#0d0e11",
+                        "primary-fixed-dim": "#9ccaff",
+                        "on-tertiary-container": "#c0d1e6",
+                        "on-primary": "#003256",
+                        "surface-dim": "#121316",
+                        "tertiary-container": "#4a5a6b",
+                        "outline": "#8b919b",
+                        "on-background": "#e3e2e5",
+                        "on-tertiary-fixed-variant": "#384859",
+                        "surface-variant": "#343538",
+                        "outline-variant": "#414750",
+                        "secondary-fixed-dim": "#98cded",
+                        "on-primary-container": "#aed3ff",
+                        "surface-bright": "#38393c",
+                        "inverse-on-surface": "#2f3033",
+                        "primary": "#9ccaff",
+                        "tertiary": "#b8c8dc",
+                        "secondary": "#98cded",
+                        "on-secondary-fixed-variant": "#094c67",
+                        "on-tertiary": "#223242",
+                        "tertiary-fixed-dim": "#b8c8dc",
+                        "on-secondary-container": "#87bcda",
+                        "primary-fixed": "#d0e4ff",
+                        "on-error": "#690005",
+                        "on-primary-fixed-variant": "#00497a",
+                        "error": "#ffb4ab",
+                        "on-secondary-fixed": "#001e2c",
+                        "on-surface": "#e3e2e5",
+                        "on-secondary": "#003549",
+                        "error-container": "#93000a",
+                        "on-error-container": "#ffdad6",
+                        "surface-container-high": "#292a2d",
+                        "inverse-surface": "#e3e2e5",
+                        "background": "#121316",
+                        "surface": "#121316",
+                        "on-tertiary-fixed": "#0c1d2c",
+                        "tertiary-fixed": "#d3e4f9",
+                        "on-primary-fixed": "#001d35",
+                        "surface-container-low": "#1a1c1e"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.125rem",
+                        "lg": "0.25rem",
+                        "xl": "0.5rem",
+                        "full": "0.75rem",
+                        "3xl": "4px"
+                    },
+                    "spacing": {
+                        "stack-lg": "48px",
+                        "margin-desktop": "64px",
+                        "unit": "8px",
+                        "gutter": "24px",
+                        "container-max": "1200px",
+                        "stack-md": "24px",
+                        "stack-sm": "12px",
+                        "margin-mobile": "20px"
+                    },
+                    "fontFamily": {
+                        "headline-md": [
+                            "Libre Caslon Text", "sans-serif"
+                        ],
+                        "headline-lg": [
+                            "Libre Caslon Text", "sans-serif"
+                        ],
+                        "label-sm": [
+                            "Manrope", "sans-serif"
+                        ],
+                        "body-lg": [
+                            "Manrope", "sans-serif"
+                        ],
+                        "body-md": [
+                            "Manrope", "sans-serif"
+                        ],
+                        "display-lg-mobile": [
+                            "Libre Caslon Text", "sans-serif"
+                        ],
+                        "display-lg": [
+                            "Libre Caslon Text", "sans-serif"
+                        ],
+                        "japanese": [
+                            "Shippori Mincho", "serif"
+                        ]
+                    },
+                    "fontSize": {
+                        "headline-md": [
+                            "24px",
+                            {
+                                "lineHeight": "32px",
+                                "fontWeight": "400"
+                            }
+                        ],
+                        "headline-lg": [
+                            "32px",
+                            {
+                                "lineHeight": "40px",
+                                "fontWeight": "400"
+                            }
+                        ],
+                        "label-sm": [
+                            "12px",
+                            {
+                                "lineHeight": "16px",
+                                "letterSpacing": "0.1em",
+                                "fontWeight": "600"
+                            }
+                        ],
+                        "body-lg": [
+                            "18px",
+                            {
+                                "lineHeight": "28px",
+                                "letterSpacing": "0.01em",
+                                "fontWeight": "400"
+                            }
+                        ],
+                        "body-md": [
+                            "16px",
+                            {
+                                "lineHeight": "24px",
+                                "fontWeight": "400"
+                            }
+                        ],
+                        "display-lg-mobile": [
+                            "40px",
+                            {
+                                "lineHeight": "48px",
+                                "letterSpacing": "-0.01em",
+                                "fontWeight": "400"
+                            }
+                        ],
+                        "display-lg": [
+                            "64px",
+                            {
+                                "lineHeight": "72px",
+                                "letterSpacing": "-0.02em",
+                                "fontWeight": "400"
+                            }
+                        ],
+                        "hero-jp": [
+                            "8vw",
+                            {
+                                "lineHeight": "1.2",
+                                "fontWeight": "400"
+                            }
+                        ],
+                        "hero-jp-mobile": [
+                            "15vw",
+                            {
+                                "lineHeight": "1.2",
+                                "fontWeight": "400"
+                            }
+                        ]
+                    }
+                },
+            },
         }
-      }
-    }
-  </script>
-<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@800;900&family=Train+One&display=swap" rel="stylesheet">
-<style data-purpose="custom-utilities">
-    @import url('https://fonts.googleapis.com/css2?family=Space+Mono:ital,wght@0,400;0,700;1,400;1,700&display=swap');
+    </script>
+    <style>
+        body {
+            margin: 0;
+            overflow-x: hidden;
+            background-color: #050608;
+            color: #e3e2e5;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
 
-    body {
-      background-color: #f6f6f6; /* Outer gray background */
-      display: flex;
-      justify-content: center;
-      margin: 0;
-      min-height: 100vh;
-      font-family: 'Space Mono', monospace;
-      background-image: 
-    linear-gradient(to right, rgba(0,0,0,0.04) 1px, transparent 1px),
-    linear-gradient(to bottom, rgba(0,0,0,0.04) 1px, transparent 1px);
-    background-size: 20px 20px;
-    }
+        /* Ambient Mesh Background */
+        .ambient-bg {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100vw;
+            height: 100vh;
+            background: 
+                radial-gradient(circle at 10% 40%, rgba(8, 92, 150, 0.4) 0%, transparent 60%),
+                radial-gradient(circle at 90% 80%, rgba(38, 40, 46, 0.9) 0%, transparent 50%),
+                radial-gradient(circle at 50% 50%, rgba(95, 111, 129, 0.1) 0%, transparent 70%);
+            background-color: #050608;
+            z-index: -2;
+        }
 
-    .mobile-container {
-      width: 100%;
-      max-width: 430px; /* Mobile width constraint */
-      background-color: #f6f6f6;
-      position: relative;
-      overflow-x: hidden;
-      transform-origin: top center;
-      /* На мобильных устройствах масштаб остается 1:1, мы убрали отсюда scale */
-    }
+        /* 5-Line Vertical Grid */
+        .vertical-grid {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100vw;
+            height: 100vh;
+            z-index: -1;
+            display: flex;
+            justify-content: space-between;
+            pointer-events: none;
+            padding: 0 10vw;
+        }
+        
+        .vertical-line {
+            width: 1px;
+            height: 100%;
+            background: rgba(255, 255, 255, 0.06);
+        }
 
-    /* === АДАПТИВНОСТЬ ДЛЯ ПЛАНШЕТОВ И ПК === */
-    
-    /* Для планшетов (экраны от 768px до 1023px) - средний масштаб */
-    @media (min-width: 768px) and (max-width: 1023px) {
-      .mobile-container {
-        transform: scale(1.4);
-        margin-top: 4vh;
-        margin-bottom: 400px; /* Компенсация высоты, чтобы скролл работал корректно */
-      }
-    }
+        /* Clear Glassmorphism Cards */
+        .clear-glass {
+            background: rgba(255, 255, 255, 0.02);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.22);
+            border-radius: 4px;
+            transition: transform 0.3s ease, border-color 0.3s ease;
+        }
 
-    /* Для мониторов ПК (экраны от 1024px и шире) - ваш масштаб 1.8 */
-    @media (min-width: 1024px) {
-      .mobile-container {
-        transform: scale(1.8);
-        margin-top: 6vh;
-        margin-bottom: 800px; /* Большая компенсация отступа снизу из-за сильного увеличения */
-      }
-    }
-    /* ========================================= */
-    
-    .bg-tech-grid-overlay {
-      position: absolute;
-      top: 0;
-      left: 0;
-      right: 0;
-      bottom: 0;
-      background-image: linear-gradient(to right, rgba(0,0,0,0.03) 1px, transparent 1px), linear-gradient(to bottom, rgba(0,0,0,0.03) 1px, transparent 1px);
-      background-size: 20px 20px;
-      pointer-events: none;
-      z-index: 0;
-    }
+        .clear-glass:hover {
+            transform: translateY(-2px);
+            border-color: rgba(255, 255, 255, 0.4);
+        }
 
-    /* Top border line */
-    .mobile-container::before {
-      content: '';
-      position: absolute;
-      top: 0;
-      left: 0;
-      right: 0;
-      height: 4px;
-      background-color: #e5e5e5;
-      z-index: 10;
-    }
+        /* Entrance / Scroll Reveal Animations */
+        .fade-in-up {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1), transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+        }
 
-    .clip-card {
-      clip-path: polygon(
-        0 0,
-        calc(100% - 15px) 0,
-        100% 15px,
-        100% 100%,
-        0 100%
-      );
-    }
-    
-    .clip-button {
-      clip-path: polygon(
-        0 0,
-        100% 0,
-        100% calc(100% - 10px),
-        calc(100% - 10px) 100%,
-        0 100%
-      );
-    }
-
-    .vertical-text {
-      writing-mode: vertical-rl;
-      text-orientation: mixed;
-      transform: rotate(180deg);
-    }
-    
-    .barcode-line {
-      width: 2px;
-      height: 12px;
-      background-color: black;
-      display: inline-block;
-      margin-right: 2px;
-    }
-    .barcode-line.thick {
-      width: 4px;
-    }
-    .barcode-line.thin {
-      width: 1px;
-    }
-
-    .card-shadow {
-      position: relative;
-      z-index: 1;
-    }
-    .card-shadow::before {
-      content: '';
-      position: absolute;
-      top: 4px;
-      left: 4px;
-      right: -4px;
-      bottom: -4px;
-      background-color: black;
-      z-index: -1;
-      clip-path: polygon(
-        0 0,
-        calc(100% - 15px) 0,
-        100% 15px,
-        100% 100%,
-        0 100%
-      );
-    }
-    
-    .crosshair {
-      position: absolute;
-      width: 10px;
-      height: 10px;
-    }
-    .crosshair::before {
-      content: '';
-      position: absolute;
-      top: 50%;
-      left: 0;
-      right: 0;
-      height: 1px;
-      background: rgba(0,0,0,0.3);
-    }
-    .crosshair::after {
-      content: '';
-      position: absolute;
-      left: 50%;
-      top: 0;
-      bottom: 0;
-      width: 1px;
-      background: rgba(0,0,0,0.3);
-    }
-    
-    .hazard-stripes {
-      background: repeating-linear-gradient(
-        45deg,
-        transparent,
-        transparent 2px,
-        #ffff01 2px,
-        #ffff01 4px
-      );
-    }
-  </style>
+        .fade-in-up.is-visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    </style>
 </head>
-<body>
-<!-- BEGIN: MainContainer -->
-<main class="mobile-container pb-8 text-black" data-purpose="mobile-viewport">
-<div class="crosshair top-4 left-4"></div>
-<div class="crosshair top-4 right-4"></div>
-<div class="crosshair bottom-4 left-4"></div>
-<div class="crosshair bottom-4 right-4"></div>
-<div class="absolute top-8 right-2 text-[8px] font-bold text-gray-400 rotate-90 origin-right">SYS // NODE_08</div>
-<div class="relative z-10">
-<!-- BEGIN: TopHeader -->
-<header class="pt-6 px-6 pb-4" data-purpose="top-header">
-<div class="flex justify-between items-start text-[10px] text-gray-500 font-bold mb-6 tracking-widest">
-<span>345° 89' 67"</span>
-<span>STATUS: ACTIVE</span>
-</div>
-<div class="flex justify-between items-center border-b border-gray-300 pb-2 mb-8">
-<div class="text-xs font-bold tracking-widest">IDENTITY //</div>
-<div class="bg-electric-yellow border-2 border-black px-3 py-1 text-xs font-bold tracking-widest shadow-[2px_2px_0px_0px_rgba(0,0,0,1)] flex items-center gap-2">
-<div class="w-1.5 h-1.5 bg-black rounded-full animate-pulse"></div>
-          SYS // 01
-        </div>
-</div>
-<div class="text-center mb-12 mt-8 relative">
-<div class="absolute top-0 left-0 text-[8px] font-bold text-gray-400">[ SECURE DATA ]</div>
-<div class="absolute bottom-0 right-0 text-[8px] font-bold text-gray-400">認証済み</div>
-<h1 class="text-5xl sm:text-6xl font-black tracking-tighter mb-2 whitespace-nowrap" style="font-family: 'Train One', system-ui;">ヒスレイ</h1>
-<h2 class="text-3xl font-black tracking-tight whitespace-nowrap" style="font-family: 'Montserrat', sans-serif;">hisurei</h2>
-</div>
-</header>
-<!-- END: TopHeader -->
-<!-- BEGIN: ContactSection -->
-<section class="px-6 mb-12" data-purpose="contact-section">
-<div class="flex justify-between items-end border-b border-gray-300 pb-2 mb-6">
-<h3 class="text-2xl font-black font-sans tracking-tight flex items-center gap-2">
-<span class="w-1.5 h-6 bg-electric-yellow border border-black inline-block"></span>
-          01 // CONTACT
-        </h3>
-<div class="w-3 h-3 border-r-2 border-b-2 border-gray-400 mb-1"></div>
-</div>
-<div class="space-y-4">
-<!-- Discord -->
-<div class="border-2 border-black bg-white p-4 flex justify-between items-center shadow-[2px_2px_0px_0px_rgba(0,0,0,1)] relative">
-<div class="absolute top-0 left-0 w-full h-0.5 hazard-stripes"></div>
-<div class="flex items-center gap-3">
-<svg class="w-6 h-6" fill="currentColor" viewbox="0 0 24 24"><path d="M20.317 4.3698a19.7913 19.7913 0 00-4.8851-1.5152.0741.0741 0 00-.0785.0371c-.211.3753-.4447.8648-.6083 1.2495-1.8447-.2762-3.68-.2762-5.4868 0-.1636-.3933-.4058-.8742-.6177-1.2495a.077.077 0 00-.0785-.037 19.7363 19.7363 0 00-4.8852 1.515.0699.0699 0 00-.0321.0277C.5334 9.0458-.319 13.5799.0992 18.0578a.0824.0824 0 00.0312.0561c2.0528 1.5076 4.0413 2.4228 5.9929 3.0294a.0777.0777 0 00.0842-.0276c.4616-.6304.8731-1.2952 1.226-1.9942a.076.076 0 00-.0416-.1057c-.6528-.2476-1.2743-.5495-1.8722-.8923a.077.077 0 01-.0076-.1277c.1258-.0943.2517-.1923.3718-.2914a.0743.0743 0 01.0776-.0105c3.9278 1.7933 8.18 1.7933 12.0614 0a.0739.0739 0 01.0785.0095c.1202.099.246.1981.3728.2924a.077.077 0 01-.0066.1276 12.2986 12.2986 0 01-1.873.8914.0766.0766 0 00-.0407.1067c.3604.698.7719 1.3628 1.225 1.9932a.076.076 0 00.0842.0286c1.961-.6067 3.9495-1.5219 6.0023-3.0294a.077.077 0 00.0313-.0552c.5004-5.177-.8382-9.6739-3.5485-13.6604a.061.061 0 00-.0312-.0286zM8.02 15.3312c-1.1825 0-2.1569-1.0857-2.1569-2.419 0-1.3332.9555-2.4189 2.157-2.4189 1.2108 0 2.1757 1.0952 2.1568 2.419 0 1.3332-.9555 2.4189-2.1569 2.4189zm7.9748 0c-1.1825 0-2.1569-1.0857-2.1569-2.419 0-1.3332.9554-2.4189 2.1569-2.4189 1.2108 0 2.1757 1.0952 2.1568 2.419 0 1.3332-.946 2.4189-2.1568 2.4189z"></path></svg>
-<span class="font-bold tracking-widest text-sm">DISCORD</span>
-</div>
-<div class="bg-gray-200 border border-black px-2 py-1 text-xs flex items-center gap-2 cursor-pointer hover:bg-gray-300 transition-colors" onclick="copyToClipboard(this, 'hisurei')">
-<span class="w-2 h-2 bg-electric-yellow inline-block border border-black"></span>
-<span class="font-bold underline copy-target">hisurei</span>
-</div>
-</div>
-<!-- Telegram -->
-<div class="border-2 border-black bg-white p-4 flex justify-between items-center shadow-[2px_2px_0px_0px_rgba(0,0,0,1)] relative">
-<div class="absolute top-0 left-0 w-full h-0.5 hazard-stripes"></div>
-<div class="flex items-center gap-3">
-<svg class="w-6 h-6" fill="currentColor" viewbox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm4.64 6.8c-.15 1.58-.8 5.42-1.13 7.19-.14.75-.42 1-.68 1.03-.58.05-1.02-.38-1.58-.75-.88-.58-1.38-.94-2.23-1.5-.99-.65-.35-1.01.22-1.59.15-.15 2.71-2.48 2.76-2.69a.2.2 0 00-.05-.18c-.06-.05-.14-.03-.21-.02-.09.02-1.49.95-4.22 2.79-.4.27-.76.41-1.08.4-.36-.01-1.04-.2-1.55-.37-.63-.2-1.12-.31-1.08-.66.02-.18.27-.36.74-.55 2.92-1.27 4.86-2.11 5.83-2.51 2.78-1.16 3.35-1.36 3.73-1.36.08 0 .27.02.39.12.1.08.13.19.14.27-.01.06.01.24 0 .38z"></path></svg>
-<span class="font-bold tracking-widest text-sm">TELEGRAM</span>
-</div>
-<div class="bg-gray-200 border border-black px-2 py-1 text-xs font-bold cursor-pointer hover:bg-gray-300 transition-colors" onclick="copyToClipboard(this, '@KeyHisuBot')">
-<span class="underline copy-target">@KeyHisuBot</span>
-</div>
-</div>
-</div>
-</section>
-<!-- END: ContactSection -->
-<!-- BEGIN: PlatformsSection -->
-<section class="px-6 mb-8" data-purpose="platforms-section">
-<div class="flex justify-between items-end border-b border-gray-300 pb-2 mb-6 relative">
-<h3 class="text-2xl font-black font-sans tracking-tight flex items-center gap-2">
-<span class="w-1.5 h-6 bg-electric-yellow border border-black inline-block"></span>
-          02 // PLATFORMS
-        </h3>
-<div class="text-[10px] font-bold tracking-widest text-gray-500 mb-1">[ 8 NODES ]</div>
-<div class="absolute top-0 right-0 text-[6px] text-gray-400">システム接続</div>
-</div>
-<div class="grid grid-cols-2 gap-4">
-<!-- Platform Card 1: STEAM -->
-<div class="card-shadow group">
-<div class="bg-electric-yellow border-2 border-black clip-card h-64 flex relative">
-<div class="w-8 border-r-2 border-black flex flex-col justify-between items-center py-2 shrink-0">
-<div class="vertical-text text-black font-black font-sans text-xl tracking-tighter">M56_UNIT</div>
-<div class="flex flex-col items-center gap-1">
-<div class="w-3 h-3 bg-black group-hover:bg-red-500 transition-colors"></div>
-<div class="text-[8px] font-bold">N_01</div>
-</div>
-</div>
-<div class="p-3 flex-1 flex flex-col relative overflow-hidden">
-<div class="absolute top-2 right-2 border border-black px-1 text-[6px] font-bold">STATUS: ONLINE</div>
-<div class="flex justify-between items-start mb-2 mt-4">
-<div class="text-3xl font-sans">五六</div>
-<div class="text-[8px] border-b border-black font-bold">@USER_ID</div>
-</div>
-<h4 class="text-2xl font-black font-sans tracking-tighter leading-none mb-1">STEAM_</h4>
-<div class="bg-black text-white text-[8px] px-1 inline-block w-max font-bold mb-2">[STATUS: ACTIVE]</div>
-<div class="border border-black text-[8px] px-1 w-max font-bold mb-1">NODE // 01</div>
-<div class="text-[8px] font-bold mb-1">COORD_35.6895</div>
-<div class="flex mb-auto items-center">
-<span class="barcode-line thick"></span><span class="barcode-line thin"></span><span class="barcode-line"></span><span class="barcode-line thick"></span>
-<span class="ml-2 text-[6px] font-bold text-gray-600">REQ.DATA</span>
-</div>
-<a href="https://steamcommunity.com/id/hisurei/" target="_blank" rel="noopener noreferrer" class="bg-black text-electric-yellow w-full py-2 clip-button flex items-center justify-center gap-2 mt-2 hover:bg-gray-800 transition-colors relative overflow-hidden group/btn">
-<div class="absolute top-0 right-0 bottom-0 w-2 hazard-stripes opacity-50"></div>
-<div class="w-1.5 h-1.5 rounded-full bg-electric-yellow shadow-[0_0_5px_#ffff01]"></div>
-<span class="text-[10px] font-bold tracking-widest leading-none text-center">INITIALIZE<br/>//</span>
-</a>
-</div>
-</div>
-</div>
-<!-- Platform Card 2: TIKTOK -->
-<div class="card-shadow group">
-<div class="bg-electric-yellow border-2 border-black clip-card h-64 flex relative">
-<div class="w-8 border-r-2 border-black flex flex-col justify-between items-center py-2 shrink-0">
-<div class="vertical-text text-black font-black font-sans text-xl tracking-tighter">M56_UNIT</div>
-<div class="flex flex-col items-center gap-1">
-<div class="w-3 h-3 bg-black group-hover:bg-red-500 transition-colors"></div>
-<div class="text-[8px] font-bold">N_02</div>
-</div>
-</div>
-<div class="p-3 flex-1 flex flex-col relative overflow-hidden">
-<div class="absolute top-2 right-2 border border-black px-1 text-[6px] font-bold">FREQ // 108.4MHz</div>
-<div class="flex justify-between items-start mb-2 mt-4">
-<div class="text-3xl font-sans">五六</div>
-<div class="text-[8px] border-b border-black font-bold">@USER_ID</div>
-</div>
-<h4 class="text-2xl font-black font-sans tracking-tighter leading-none mb-1">TIKTOK_</h4>
-<div class="bg-black text-white text-[8px] px-1 inline-block w-max font-bold mb-2">[STATUS: ACTIVE]</div>
-<div class="border border-black text-[8px] px-1 w-max font-bold mb-1">NODE // 02</div>
-<div class="text-[8px] font-bold mb-1">COORD_35.6895</div>
-<div class="flex mb-auto items-center">
-<span class="barcode-line thin"></span><span class="barcode-line thick"></span><span class="barcode-line thin"></span><span class="barcode-line"></span>
-</div>
-<a href="https://www.tiktok.com/@hisurei" target="_blank" rel="noopener noreferrer" class="bg-black text-electric-yellow w-full py-2 clip-button flex items-center justify-center gap-2 mt-2 hover:bg-gray-800 transition-colors relative overflow-hidden">
-<div class="absolute top-0 right-0 bottom-0 w-2 hazard-stripes opacity-50"></div>
-<div class="w-1.5 h-1.5 rounded-full bg-electric-yellow shadow-[0_0_5px_#ffff01]"></div>
-<span class="text-[10px] font-bold tracking-widest leading-none text-center">INITIALIZE<br/>//</span>
-</a>
-</div>
-</div>
-</div>
-<!-- Platform Card 3: SPOTIFY -->
-<div class="card-shadow group">
-<div class="bg-electric-yellow border-2 border-black clip-card h-64 flex relative">
-<div class="w-8 border-r-2 border-black flex flex-col justify-between items-center py-2 shrink-0">
-<div class="vertical-text text-black font-black font-sans text-xl tracking-tighter">M56_UNIT</div>
-<div class="flex flex-col items-center gap-1">
-<div class="w-3 h-3 bg-black group-hover:bg-red-500 transition-colors"></div>
-<div class="text-[8px] font-bold">N_03</div>
-</div>
-</div>
-<div class="p-3 flex-1 flex flex-col relative overflow-hidden">
-<div class="absolute top-2 right-2 border border-black px-1 text-[6px] font-bold">SIGNAL: 100%</div>
-<div class="flex justify-between items-start mb-2 mt-4">
-<div class="text-3xl font-sans">五六</div>
-<div class="text-[8px] border-b border-black font-bold">@USER_ID</div>
-</div>
-<h4 class="text-2xl font-black font-sans tracking-tighter leading-none mb-1 text-ellipsis overflow-hidden">SPOTIFY_</h4>
-<div class="bg-black text-white text-[8px] px-1 inline-block w-max font-bold mb-2">[STATUS: ACTIVE]</div>
-<div class="border border-black text-[8px] px-1 w-max font-bold mb-1">NODE // 03</div>
-<div class="text-[8px] font-bold mb-1">COORD_35.6895</div>
-<div class="flex mb-auto items-center">
-<span class="barcode-line thick"></span><span class="barcode-line"></span><span class="barcode-line thin"></span><span class="barcode-line thick"></span>
-</div>
-<a href="https://open.spotify.com/user/3166gqe2dvc5suvpmiq7iogbgoay?si=e8463ccd0d714970" target="_blank" rel="noopener noreferrer" class="bg-black text-electric-yellow w-full py-2 clip-button flex items-center justify-center gap-2 mt-2 hover:bg-gray-800 transition-colors relative overflow-hidden">
-<div class="absolute top-0 right-0 bottom-0 w-2 hazard-stripes opacity-50"></div>
-<div class="w-1.5 h-1.5 rounded-full bg-electric-yellow shadow-[0_0_5px_#ffff01]"></div>
-<span class="text-[10px] font-bold tracking-widest leading-none text-center">INITIALIZE<br/>//</span>
-</a>
-</div>
-</div>
-</div>
-<!-- Platform Card 4: SHIKIMORI -->
-<div class="card-shadow group">
-<div class="bg-electric-yellow border-2 border-black clip-card h-64 flex relative">
-<div class="w-8 border-r-2 border-black flex flex-col justify-between items-center py-2 shrink-0">
-<div class="vertical-text text-black font-black font-sans text-xl tracking-tighter">M56_UNIT</div>
-<div class="flex flex-col items-center gap-1">
-<div class="w-3 h-3 bg-black group-hover:bg-red-500 transition-colors"></div>
-<div class="text-[8px] font-bold">N_04</div>
-</div>
-</div>
-<div class="p-3 flex-1 flex flex-col relative overflow-hidden">
-<div class="absolute top-2 right-2 border border-black px-1 text-[6px] font-bold">LINK_READY</div>
-<div class="flex justify-between items-start mb-2 mt-4">
-<div class="text-3xl font-sans">五六</div>
-<div class="text-[8px] border-b border-black font-bold">@USER_ID</div>
-</div>
-<h4 class="text-[20px] font-black font-sans tracking-tighter leading-none mb-1 text-ellipsis overflow-hidden">SHIKIMORI_</h4>
-<div class="bg-black text-white text-[8px] px-1 inline-block w-max font-bold mb-2">[STATUS: ACTIVE]</div>
-<div class="border border-black text-[8px] px-1 w-max font-bold mb-1">NODE // 04</div>
-<div class="text-[8px] font-bold mb-1">COORD_35.6895</div>
-<div class="flex mb-auto items-center">
-<span class="barcode-line thin"></span><span class="barcode-line thin"></span><span class="barcode-line thick"></span><span class="barcode-line"></span>
-</div>
-<a href="https://shikimori.io/Hisurei" target="_blank" rel="noopener noreferrer" class="bg-black text-electric-yellow w-full py-2 clip-button flex items-center justify-center gap-2 mt-2 hover:bg-gray-800 transition-colors relative overflow-hidden">
-<div class="absolute top-0 right-0 bottom-0 w-2 hazard-stripes opacity-50"></div>
-<div class="w-1.5 h-1.5 rounded-full bg-electric-yellow shadow-[0_0_5px_#ffff01]"></div>
-<span class="text-[10px] font-bold tracking-widest leading-none text-center">INITIALIZE<br/>//</span>
-</a>
-</div>
-</div>
-</div>
-<!-- Platform Card 5: IMDB -->
-<div class="card-shadow group">
-<div class="bg-electric-yellow border-2 border-black clip-card h-64 flex relative">
-<div class="w-8 border-r-2 border-black flex flex-col justify-between items-center py-2 shrink-0">
-<div class="vertical-text text-black font-black font-sans text-xl tracking-tighter">M56_UNIT</div>
-<div class="flex flex-col items-center gap-1">
-<div class="w-3 h-3 bg-black group-hover:bg-red-500 transition-colors"></div>
-<div class="text-[8px] font-bold">N_05</div>
-</div>
-</div>
-<div class="p-3 flex-1 flex flex-col relative overflow-hidden">
-<div class="absolute top-2 right-2 border border-black px-1 text-[6px] font-bold">STATUS: ONLINE</div>
-<div class="flex justify-between items-start mb-2 mt-4">
-<div class="text-3xl font-sans">五六</div>
-<div class="text-[8px] border-b border-black font-bold">@USER_ID</div>
-</div>
-<h4 class="text-2xl font-black font-sans tracking-tighter leading-none mb-1">IMDB_</h4>
-<div class="bg-black text-white text-[8px] px-1 inline-block w-max font-bold mb-2">[STATUS: ACTIVE]</div>
-<div class="border border-black text-[8px] px-1 w-max font-bold mb-1">NODE // 05</div>
-<div class="text-[8px] font-bold mb-1">COORD_35.6895</div>
-<div class="flex mb-auto items-center">
-<span class="barcode-line thick"></span><span class="barcode-line thick"></span><span class="barcode-line thin"></span>
-</div>
-<a href="https://www.imdb.com/user/ur186197373/watchlist/?ref_=up_urwls_sm&sort=list_order,desc" target="_blank" rel="noopener noreferrer" class="bg-black text-electric-yellow w-full py-2 clip-button flex items-center justify-center gap-2 mt-2 hover:bg-gray-800 transition-colors relative overflow-hidden">
-<div class="absolute top-0 right-0 bottom-0 w-2 hazard-stripes opacity-50"></div>
-<div class="w-1.5 h-1.5 rounded-full bg-electric-yellow shadow-[0_0_5px_#ffff01]"></div>
-<span class="text-[10px] font-bold tracking-widest leading-none text-center">INITIALIZE<br/>//</span>
-</a>
-</div>
-</div>
-</div>
-<!-- Platform Card 6: X -->
-<div class="card-shadow group">
-<div class="bg-electric-yellow border-2 border-black clip-card h-64 flex relative">
-<div class="w-8 border-r-2 border-black flex flex-col justify-between items-center py-2 shrink-0">
-<div class="vertical-text text-black font-black font-sans text-xl tracking-tighter">M56_UNIT</div>
-<div class="flex flex-col items-center gap-1">
-<div class="w-3 h-3 bg-black group-hover:bg-red-500 transition-colors"></div>
-<div class="text-[8px] font-bold">N_06</div>
-</div>
-</div>
-<div class="p-3 flex-1 flex flex-col relative overflow-hidden">
-<div class="absolute top-2 right-2 border border-black px-1 text-[6px] font-bold">FREQ // 108.4MHz</div>
-<div class="flex justify-between items-start mb-2 mt-4">
-<div class="text-3xl font-sans">五六</div>
-<div class="text-[8px] border-b border-black font-bold">@USER_ID</div>
-</div>
-<h4 class="text-2xl font-black font-sans tracking-tighter leading-none mb-1">X_</h4>
-<div class="bg-black text-white text-[8px] px-1 inline-block w-max font-bold mb-2">[STATUS: ACTIVE]</div>
-<div class="border border-black text-[8px] px-1 w-max font-bold mb-1">NODE // 06</div>
-<div class="text-[8px] font-bold mb-1">COORD_35.6895</div>
-<div class="flex mb-auto items-center">
-<span class="barcode-line thin"></span><span class="barcode-line"></span><span class="barcode-line thick"></span><span class="barcode-line thin"></span>
-</div>
-<a href="https://x.com/Hisureii" target="_blank" rel="noopener noreferrer" class="bg-black text-electric-yellow w-full py-2 clip-button flex items-center justify-center gap-2 mt-2 hover:bg-gray-800 transition-colors relative overflow-hidden">
-<div class="absolute top-0 right-0 bottom-0 w-2 hazard-stripes opacity-50"></div>
-<div class="w-1.5 h-1.5 rounded-full bg-electric-yellow shadow-[0_0_5px_#ffff01]"></div>
-<span class="text-[10px] font-bold tracking-widest leading-none text-center">INITIALIZE<br/>//</span>
-</a>
-</div>
-</div>
-</div>
-<!-- Platform Card 7: YOUTUBE -->
-<div class="card-shadow group">
-<div class="bg-electric-yellow border-2 border-black clip-card h-64 flex relative">
-<div class="w-8 border-r-2 border-black flex flex-col justify-between items-center py-2 shrink-0">
-<div class="vertical-text text-black font-black font-sans text-xl tracking-tighter">M56_UNIT</div>
-<div class="flex flex-col items-center gap-1">
-<div class="w-3 h-3 bg-black group-hover:bg-red-500 transition-colors"></div>
-<div class="text-[8px] font-bold">N_07</div>
-</div>
-</div>
-<div class="p-3 flex-1 flex flex-col relative overflow-hidden">
-<div class="absolute top-2 right-2 border border-black px-1 text-[6px] font-bold">SIGNAL: 100%</div>
-<div class="flex justify-between items-start mb-2 mt-4">
-<div class="text-3xl font-sans">五六</div>
-<div class="text-[8px] border-b border-black font-bold">@USER_ID</div>
-</div>
-<h4 class="text-[22px] font-black font-sans tracking-tighter leading-none mb-1">YOUTUBE_</h4>
-<div class="bg-black text-white text-[8px] px-1 inline-block w-max font-bold mb-2">[STATUS: ACTIVE]</div>
-<div class="border border-black text-[8px] px-1 w-max font-bold mb-1">NODE // 07</div>
-<div class="text-[8px] font-bold mb-1">COORD_35.6895</div>
-<div class="flex mb-auto items-center">
-<span class="barcode-line thick"></span><span class="barcode-line"></span><span class="barcode-line thin"></span><span class="barcode-line thin"></span>
-</div>
-<a href="https://www.youtube.com/@Hisurei" target="_blank" rel="noopener noreferrer" class="bg-black text-electric-yellow w-full py-2 clip-button flex items-center justify-center gap-2 mt-2 hover:bg-gray-800 transition-colors relative overflow-hidden">
-<div class="absolute top-0 right-0 bottom-0 w-2 hazard-stripes opacity-50"></div>
-<div class="w-1.5 h-1.5 rounded-full bg-electric-yellow shadow-[0_0_5px_#ffff01]"></div>
-<span class="text-[10px] font-bold tracking-widest leading-none text-center">INITIALIZE<br/>//</span>
-</a>
-</div>
-</div>
-</div>
-<!-- Platform Card 8: TWITCH -->
-<div class="card-shadow group">
-<div class="bg-electric-yellow border-2 border-black clip-card h-64 flex relative">
-<div class="w-8 border-r-2 border-black flex flex-col justify-between items-center py-2 shrink-0">
-<div class="vertical-text text-black font-black font-sans text-xl tracking-tighter">M56_UNIT</div>
-<div class="flex flex-col items-center gap-1">
-<div class="w-3 h-3 bg-black group-hover:bg-red-500 transition-colors"></div>
-<div class="text-[8px] font-bold">N_08</div>
-</div>
-</div>
-<div class="p-3 flex-1 flex flex-col relative overflow-hidden">
-<div class="absolute top-2 right-2 border border-black px-1 text-[6px] font-bold">LINK_READY</div>
-<div class="flex justify-between items-start mb-2 mt-4">
-<div class="text-3xl font-sans">五六</div>
-<div class="text-[8px] border-b border-black font-bold">@USER_ID</div>
-</div>
-<h4 class="text-2xl font-black font-sans tracking-tighter leading-none mb-1">TWITCH_</h4>
-<div class="bg-black text-white text-[8px] px-1 inline-block w-max font-bold mb-2">[STATUS: ACTIVE]</div>
-<div class="border border-black text-[8px] px-1 w-max font-bold mb-1">NODE // 08</div>
-<div class="text-[8px] font-bold mb-1">COORD_35.6895</div>
-<div class="flex mb-auto items-center">
-<span class="barcode-line thin"></span><span class="barcode-line thick"></span><span class="barcode-line thick"></span><span class="barcode-line thin"></span>
-</div>
-<a href="https://www.twitch.tv/hisurei" target="_blank" rel="noopener noreferrer" class="bg-black text-electric-yellow w-full py-2 clip-button flex items-center justify-center gap-2 mt-2 hover:bg-gray-800 transition-colors relative overflow-hidden">
-<div class="absolute top-0 right-0 bottom-0 w-2 hazard-stripes opacity-50"></div>
-<div class="w-1.5 h-1.5 rounded-full bg-electric-yellow shadow-[0_0_5px_#ffff01]"></div>
-<span class="text-[10px] font-bold tracking-widest leading-none text-center">INITIALIZE<br/>//</span>
-</a>
-</div>
-</div>
-</div>
-</div>
-</section>
-<!-- END: PlatformsSection -->
-<!-- Footer Note -->
-<div class="px-6 text-[10px] font-bold text-gray-500 tracking-widest mt-12 pb-4 flex justify-between">
-<span>LINK.DATABASE</span>
-<span class="text-[8px]">V 1.0.8</span>
-</div>
-</div>
+<body class="font-body-md text-on-surface min-h-screen flex flex-col selection:bg-primary-container selection:text-on-primary-container">
+<div class="ambient-bg" style="transform: translate(0px, 0px);"></div>
+
+<!-- Vertical Grid Lines -->
+<div class="vertical-grid">
+    <div class="vertical-line"></div>
+    <div class="vertical-line"></div>
+    <div class="vertical-line"></div>
+    <div class="vertical-line"></div>
+    <div class="vertical-line"></div>
+</div>
+
+<!-- Main Content Area -->
+<main class="flex-grow flex flex-col justify-start items-center relative z-10 w-full pt-[20vh] pb-32">
+    <!-- Hero Section -->
+    <div class="max-w-[1200px] w-full px-margin-mobile md:px-margin-desktop flex flex-col items-center justify-center text-center mb-12 relative z-20 fade-in-up">
+        <!-- Japanese Title -->
+        <h1 class="font-japanese text-hero-jp-mobile md:text-hero-jp text-on-surface font-normal mb-8 tracking-widest drop-shadow-[0_0_30px_rgba(227,226,229,0.2)] select-none scale-110" style="text-shadow: rgba(156, 202, 255, 0.1) 0px 0px 40px;">
+            ヒスレイ
+        </h1>
+        <!-- Romaji Subtitle -->
+        <p class="font-label-sm text-on-surface-variant tracking-[0.35em] uppercase font-light opacity-60 select-none ml-[0.35em]">
+            h i s u r e i
+        </p>
+    </div>
+
+    <!-- Intro Text Section -->
+    <div class="w-full max-w-[430px] px-margin-mobile text-center mb-16 fade-in-up">
+        <p class="font-light text-on-surface/80 leading-loose my-stack-lg text-sm">
+            <span class="text-base font-medium text-on-surface block mb-1">Hello,</span>
+            these are just links to my profiles that I decided to gather in one place for convenience.
+        </p>
+    </div>
+
+    <!-- Centered Content Column -->
+    <div class="w-full max-w-[430px] px-margin-mobile flex flex-col gap-16 relative z-20">
+        <!-- SECTION 01 — CONTACT -->
+        <section class="flex flex-col gap-6 fade-in-up">
+            <div class="flex flex-col items-center justify-center w-full gap-1">
+                <div class="relative flex items-center justify-center gap-4 w-full">
+                    <div class="h-px flex-grow" style="background: linear-gradient(to right, transparent, rgba(255, 255, 255, 0.2), transparent);"></div>
+                    <div class="relative flex items-center justify-center">
+                        <h2 class="font-headline-md tracking-[0.2em] text-on-surface/80 uppercase text-sm text-center ml-[0.2em]">Contact</h2>
+                    </div>
+                    <div class="h-px flex-grow" style="background: linear-gradient(to right, transparent, rgba(255, 255, 255, 0.2), transparent);"></div>
+                </div>
+                <span class="font-japanese text-[10px] opacity-40 font-light uppercase tracking-widest">コンタクト</span>
+            </div>
+
+            <div class="flex flex-col gap-4">
+                <!-- Discord Card -->
+                <div class="clear-glass p-6 flex justify-between items-center cursor-pointer select-none" onclick="copyToClipboard(this, 'hisurei')">
+                    <span class="font-body-lg text-on-surface">Discord</span>
+                    <div class="flex items-center gap-2 text-on-surface-variant">
+                        <span class="font-body-md copy-target transition-colors duration-200">hisurei</span>
+                        <span class="material-symbols-outlined text-sm opacity-50">content_copy</span>
+                    </div>
+                </div>
+
+                <!-- Telegram Card -->
+                <div class="clear-glass p-6 flex justify-between items-center cursor-pointer select-none" onclick="copyToClipboard(this, '@KeyHisuBot')">
+                    <span class="font-body-lg text-on-surface">Telegram</span>
+                    <div class="flex items-center gap-2 text-on-surface-variant">
+                        <span class="font-body-md copy-target transition-colors duration-200">@KeyHisuBot</span>
+                        <span class="material-symbols-outlined text-sm opacity-50">content_copy</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECTION 02 — PLATFORMS -->
+        <section class="flex flex-col gap-6 fade-in-up">
+            <div class="flex flex-col items-center justify-center w-full gap-1">
+                <div class="relative flex items-center justify-center gap-4 w-full">
+                    <div class="h-px flex-grow" style="background: linear-gradient(to right, transparent, rgba(255, 255, 255, 0.2), transparent);"></div>
+                    <div class="relative flex items-center justify-center">
+                        <h2 class="font-headline-md tracking-[0.2em] text-on-surface/80 uppercase text-sm text-center ml-[0.2em]">Platforms</h2>
+                    </div>
+                    <div class="h-px flex-grow" style="background: linear-gradient(to right, transparent, rgba(255, 255, 255, 0.2), transparent);"></div>
+                </div>
+                <span class="font-japanese text-[10px] opacity-40 font-light uppercase tracking-widest">プラットフォーム</span>
+            </div>
+
+            <div class="grid grid-cols-2 gap-4">
+                <!-- 1. Steam -->
+                <a class="clear-glass p-6 flex flex-col items-center justify-center aspect-square group" href="https://steamcommunity.com/id/hisurei/" rel="noopener noreferrer" target="_blank">
+                    <div class="w-8 h-8 flex items-center justify-center mb-4 text-[rgba(255,255,255,0.6)] text-xl">✦</div>
+                    <h3 class="font-headline-md text-lg text-on-surface text-center">Steam</h3>
+                </a>
+
+                <!-- 2. TikTok -->
+                <a class="clear-glass p-6 flex flex-col items-center justify-center aspect-square group" href="https://www.tiktok.com/@hisurei" rel="noopener noreferrer" target="_blank">
+                    <div class="w-8 h-8 flex items-center justify-center mb-4 text-[rgba(255,255,255,0.6)] text-xl">✦</div>
+                    <h3 class="font-headline-md text-lg text-on-surface text-center">TikTok</h3>
+                </a>
+
+                <!-- 3. Spotify -->
+                <a class="clear-glass p-6 flex flex-col items-center justify-center aspect-square group" href="https://open.spotify.com/user/3166gqe2dvc5suvpmiq7iogbgoay?si=e8463ccd0d714970" rel="noopener noreferrer" target="_blank">
+                    <div class="w-8 h-8 flex items-center justify-center mb-4 text-[rgba(255,255,255,0.6)] text-xl">✦</div>
+                    <h3 class="font-headline-md text-lg text-on-surface text-center">Spotify</h3>
+                </a>
+
+                <!-- 4. Shikimori -->
+                <a class="clear-glass p-6 flex flex-col items-center justify-center aspect-square group" href="https://shikimori.io/Hisurei" rel="noopener noreferrer" target="_blank">
+                    <div class="w-8 h-8 flex items-center justify-center mb-4 text-[rgba(255,255,255,0.6)] text-xl">✦</div>
+                    <h3 class="font-headline-md text-lg text-on-surface text-center">Shikimori</h3>
+                </a>
+
+                <!-- 5. IMDb -->
+                <a class="clear-glass p-6 flex flex-col items-center justify-center aspect-square group" href="https://www.imdb.com/user/ur186197373/watchlist/?ref_=up_urwls_sm&amp;sort=list_order,desc" rel="noopener noreferrer" target="_blank">
+                    <div class="w-8 h-8 flex items-center justify-center mb-4 text-[rgba(255,255,255,0.6)] text-xl">✦</div>
+                    <h3 class="font-headline-md text-lg text-on-surface text-center">IMDb</h3>
+                </a>
+
+                <!-- 6. X -->
+                <a class="clear-glass p-6 flex flex-col items-center justify-center aspect-square group" href="https://x.com/Hisureii" rel="noopener noreferrer" target="_blank">
+                    <div class="w-8 h-8 flex items-center justify-center mb-4 text-[rgba(255,255,255,0.6)] text-xl">✦</div>
+                    <h3 class="font-headline-md text-lg text-on-surface text-center">X</h3>
+                </a>
+
+                <!-- 7. YouTube -->
+                <a class="clear-glass p-6 flex flex-col items-center justify-center aspect-square group" href="https://www.youtube.com/@Hisurei" rel="noopener noreferrer" target="_blank">
+                    <div class="w-8 h-8 flex items-center justify-center mb-4 text-[rgba(255,255,255,0.6)] text-xl">✦</div>
+                    <h3 class="font-headline-md text-lg text-on-surface text-center">YouTube</h3>
+                </a>
+
+                <!-- 8. Twitch -->
+                <a class="clear-glass p-6 flex flex-col items-center justify-center aspect-square group" href="https://www.twitch.tv/hisurei" rel="noopener noreferrer" target="_blank">
+                    <div class="w-8 h-8 flex items-center justify-center mb-4 text-[rgba(255,255,255,0.6)] text-xl">✦</div>
+                    <h3 class="font-headline-md text-lg text-on-surface text-center">Twitch</h3>
+                </a>
+            </div>
+        </section>
+    </div>
 </main>
-<!-- END: MainContainer -->
+
 <script>
-  function copyToClipboard(element, text) {
-    navigator.clipboard.writeText(text).then(function() {
-      const target = element.querySelector('.copy-target') || element;
-      const originalText = target.innerHTML;
-      target.innerHTML = 'COPIED //';
-      setTimeout(function() {
-        target.innerHTML = originalText;
-      }, 1500);
-    }).catch(function(err) {
-      console.error('Could not copy text: ', err);
+    // Subtle parallax effect for the ambient background
+    document.addEventListener('mousemove', (e) => {
+        const bg = document.querySelector('.ambient-bg');
+        if (!bg) return;
+        const xAxis = (window.innerWidth / 2 - e.clientX) / 100;
+        const yAxis = (window.innerHeight / 2 - e.clientY) / 100;
+        bg.style.transform = `translate(${xAxis}px, ${yAxis}px)`;
     });
-  }
+
+    // Copy to clipboard with instant visual feedback
+    function copyToClipboard(containerElement, textToCopy) {
+        if (!navigator.clipboard) {
+            const tempInput = document.createElement("input");
+            tempInput.value = textToCopy;
+            document.body.appendChild(tempInput);
+            tempInput.select();
+            document.execCommand("copy");
+            document.body.removeChild(tempInput);
+            triggerFeedback(containerElement);
+            return;
+        }
+
+        navigator.clipboard.writeText(textToCopy).then(() => {
+            triggerFeedback(containerElement);
+        }).catch(err => {
+            console.error('Failed to copy text: ', err);
+        });
+    }
+
+    function triggerFeedback(containerElement) {
+        const textSpan = containerElement.querySelector('.copy-target');
+        if (!textSpan || containerElement.dataset.isCopying === 'true') return;
+
+        containerElement.dataset.isCopying = 'true';
+        const originalText = textSpan.textContent;
+        
+        textSpan.textContent = 'COPIED //';
+        textSpan.classList.add('text-primary');
+
+        setTimeout(() => {
+            textSpan.textContent = originalText;
+            textSpan.classList.remove('text-primary');
+            delete containerElement.dataset.isCopying;
+        }, 1800);
+    }
+
+    // Scroll Reveal Intersection Observer
+    document.addEventListener('DOMContentLoaded', () => {
+        const observerOptions = {
+            root: null,
+            rootMargin: '0px 0px -40px 0px',
+            threshold: 0.1
+        };
+
+        const fadeObserver = new IntersectionObserver((entries, observer) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('is-visible');
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.fade-in-up').forEach(el => {
+            fadeObserver.observe(el);
+        });
+    });
 </script>
-</body></html>
+</body>
+</html>
