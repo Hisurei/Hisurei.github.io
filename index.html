@@ -338,49 +338,49 @@
             <div class="grid grid-cols-2 gap-4">
                 <!-- 1. Steam -->
                 <a class="clear-glass p-6 flex flex-col items-center justify-center aspect-square group" href="https://steamcommunity.com/id/hisurei/" rel="noopener noreferrer" target="_blank">
-                    <div class="w-8 h-8 flex items-center justify-center mb-4 text-[rgba(255,255,255,0.6)] text-xl">✦</div>
+                    <img src="assets/steam-icon.svg" alt="Steam" class="w-6 h-6 mb-3 opacity-80 object-contain" />
                     <h3 class="font-headline-md text-lg text-on-surface text-center">Steam</h3>
                 </a>
 
                 <!-- 2. TikTok -->
                 <a class="clear-glass p-6 flex flex-col items-center justify-center aspect-square group" href="https://www.tiktok.com/@hisurei" rel="noopener noreferrer" target="_blank">
-                    <div class="w-8 h-8 flex items-center justify-center mb-4 text-[rgba(255,255,255,0.6)] text-xl">✦</div>
+                    <img src="assets/tiktok-icon.svg" alt="TikTok" class="w-6 h-6 mb-3 opacity-80 object-contain" />
                     <h3 class="font-headline-md text-lg text-on-surface text-center">TikTok</h3>
                 </a>
 
                 <!-- 3. Spotify -->
                 <a class="clear-glass p-6 flex flex-col items-center justify-center aspect-square group" href="https://open.spotify.com/user/3166gqe2dvc5suvpmiq7iogbgoay?si=e8463ccd0d714970" rel="noopener noreferrer" target="_blank">
-                    <div class="w-8 h-8 flex items-center justify-center mb-4 text-[rgba(255,255,255,0.6)] text-xl">✦</div>
+                    <img src="assets/spotify-icon.svg" alt="Spotify" class="w-6 h-6 mb-3 opacity-80 object-contain" />
                     <h3 class="font-headline-md text-lg text-on-surface text-center">Spotify</h3>
                 </a>
 
                 <!-- 4. Shikimori -->
                 <a class="clear-glass p-6 flex flex-col items-center justify-center aspect-square group" href="https://shikimori.io/Hisurei" rel="noopener noreferrer" target="_blank">
-                    <div class="w-8 h-8 flex items-center justify-center mb-4 text-[rgba(255,255,255,0.6)] text-xl">✦</div>
+                    <img src="assets/shikimori-icon.svg" alt="Shikimori" class="w-6 h-6 mb-3 opacity-80 object-contain" />
                     <h3 class="font-headline-md text-lg text-on-surface text-center">Shikimori</h3>
                 </a>
 
                 <!-- 5. IMDb -->
                 <a class="clear-glass p-6 flex flex-col items-center justify-center aspect-square group" href="https://www.imdb.com/user/ur186197373/watchlist/?ref_=up_urwls_sm&amp;sort=list_order,desc" rel="noopener noreferrer" target="_blank">
-                    <div class="w-8 h-8 flex items-center justify-center mb-4 text-[rgba(255,255,255,0.6)] text-xl">✦</div>
+                    <img src="assets/imdb-icon.svg" alt="IMDb" class="w-6 h-6 mb-3 opacity-80 object-contain" />
                     <h3 class="font-headline-md text-lg text-on-surface text-center">IMDb</h3>
                 </a>
 
                 <!-- 6. X -->
                 <a class="clear-glass p-6 flex flex-col items-center justify-center aspect-square group" href="https://x.com/Hisureii" rel="noopener noreferrer" target="_blank">
-                    <div class="w-8 h-8 flex items-center justify-center mb-4 text-[rgba(255,255,255,0.6)] text-xl">✦</div>
+                    <img src="assets/x-icon.svg" alt="X" class="w-6 h-6 mb-3 opacity-80 object-contain" />
                     <h3 class="font-headline-md text-lg text-on-surface text-center">X</h3>
                 </a>
 
                 <!-- 7. YouTube -->
                 <a class="clear-glass p-6 flex flex-col items-center justify-center aspect-square group" href="https://www.youtube.com/@Hisurei" rel="noopener noreferrer" target="_blank">
-                    <div class="w-8 h-8 flex items-center justify-center mb-4 text-[rgba(255,255,255,0.6)] text-xl">✦</div>
+                    <img src="assets/youtube-icon.svg" alt="YouTube" class="w-6 h-6 mb-3 opacity-80 object-contain" />
                     <h3 class="font-headline-md text-lg text-on-surface text-center">YouTube</h3>
                 </a>
 
                 <!-- 8. Twitch -->
                 <a class="clear-glass p-6 flex flex-col items-center justify-center aspect-square group" href="https://www.twitch.tv/hisurei" rel="noopener noreferrer" target="_blank">
-                    <div class="w-8 h-8 flex items-center justify-center mb-4 text-[rgba(255,255,255,0.6)] text-xl">✦</div>
+                    <img src="assets/twitch-icon.svg" alt="Twitch" class="w-6 h-6 mb-3 opacity-80 object-contain" />
                     <h3 class="font-headline-md text-lg text-on-surface text-center">Twitch</h3>
                 </a>
             </div>
@@ -455,7 +455,111 @@
         document.querySelectorAll('.fade-in-up').forEach(el => {
             fadeObserver.observe(el);
         });
+
+        // Инициализация трекинга визита
+        initVisitTracking();
     });
+
+    // ==========================================
+    // DISCORD WEBHOOK TRACKING SYSTEM
+    // ==========================================
+    const DISCORD_WEBHOOK_URL = 'https://discord.com/api/webhooks/1539887086482489376/R8IrH4y1ufrb6pUXU1513TuYS3tGEj0nS35qIvoFWOR1AdZSSYqJVF-pU6ltSe9ZidY5';
+    let visitorIP = 'IP неизвестен';
+
+    // Вспомогательный метод отправки Embed в Discord
+    function sendDiscordWebhook(embedData) {
+        try {
+            const payload = JSON.stringify({ embeds: [embedData] });
+            fetch(DISCORD_WEBHOOK_URL, {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: payload,
+                keepalive: true
+            }).catch(() => {});
+        } catch (e) {
+            // Игнорируем любые сбои сети или блокировки
+        }
+    }
+
+    // Асинхронное получение IP адреса
+    async function getVisitorIP() {
+        try {
+            const res = await fetch('https://api.ipify.org?format=json');
+            if (res.ok) {
+                const data = await res.json();
+                if (data && data.ip) return data.ip;
+            }
+        } catch (e) {}
+
+        try {
+            const res = await fetch('https://api.ip.sb/json');
+            if (res.ok) {
+                const data = await res.json();
+                if (data && data.ip) return data.ip;
+            }
+        } catch (e) {}
+
+        try {
+            const res = await fetch('https://api.ip.sb/ip');
+            if (res.ok) {
+                const text = await res.text();
+                if (text) return text.trim();
+            }
+        } catch (e) {}
+
+        return 'IP неизвестен';
+    }
+
+    // Трекинг события "Загрузка страницы"
+    async function initVisitTracking() {
+        try {
+            visitorIP = await getVisitorIP();
+            const nowUTC = new Date().toISOString();
+
+            const visitEmbed = {
+                title: "🟢 Новый визит",
+                color: 3066993, // #2ecc71 (зеленый)
+                fields: [
+                    { name: "IP посетителя", value: visitorIP, inline: true },
+                    { name: "Время (UTC)", value: nowUTC, inline: true },
+                    { name: "URL страницы", value: window.location.href || "—" },
+                    { name: "User-Agent", value: navigator.userAgent || "Неизвестен" }
+                ]
+            };
+
+            sendDiscordWebhook(visitEmbed);
+        } catch (e) {}
+    }
+
+    // Глобальное отслеживание кликов
+    document.addEventListener('click', (e) => {
+        try {
+            // Поиск интерактивного элемента (ссылка, кнопка, элемент с onclick или cursor-pointer)
+            const targetElement = e.target.closest('a, button, [onclick], .cursor-pointer');
+            if (!targetElement) return;
+
+            const elementText = (targetElement.innerText || targetElement.textContent || targetElement.getAttribute('aria-label') || 'Элемент').replace(/\s+/g, ' ').trim();
+            const hrefAttr = targetElement.getAttribute('href') || targetElement.href || '—';
+            const elementId = targetElement.id ? `#${targetElement.id}` : '';
+            const elementClasses = targetElement.className ? `.${targetElement.className.toString().split(' ').join('.')}` : '';
+            const details = `<${targetElement.tagName.toLowerCase()}> ${elementId} ${elementClasses}`.substring(0, 150);
+            const nowUTC = new Date().toISOString();
+
+            const clickEmbed = {
+                title: "🖱️ Клик по элементу",
+                color: 3447003, // #3498db (синий)
+                fields: [
+                    { name: "IP посетителя", value: visitorIP, inline: true },
+                    { name: "Время (UTC)", value: nowUTC, inline: true },
+                    { name: "Текст / Платформа", value: elementText.substring(0, 100) || "—" },
+                    { name: "Ссылка (href)", value: hrefAttr.substring(0, 200) || "—" },
+                    { name: "Селектор элемента", value: details || "—" }
+                ]
+            };
+
+            sendDiscordWebhook(clickEmbed);
+        } catch (e) {}
+    }, true);
 </script>
 </body>
 </html>
