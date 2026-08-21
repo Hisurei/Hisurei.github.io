@@ -136,7 +136,7 @@
                     <span class="font-body-lg text-on-surface">Discord</span>
                     <div class="flex items-center gap-2 text-on-surface-variant">
                         <span class="font-body-md copy-target transition-colors duration-200">hisurei</span>
-                        <span class="material-symbols-outlined text-sm opacity-50">content_copy</span>
+                        <img src="assets/copy-svgrepo-com.svg" alt="Copy" class="w-4 h-4 opacity-50" style="width: 16px; height: 16px;" />
                     </div>
                 </div>
 
@@ -145,7 +145,7 @@
                     <span class="font-body-lg text-on-surface">Telegram</span>
                     <div class="flex items-center gap-2 text-on-surface-variant">
                         <span class="font-body-md copy-target transition-colors duration-200">@KeyHisuBot</span>
-                        <span class="material-symbols-outlined text-sm opacity-50">content_copy</span>
+                        <img src="assets/copy-svgrepo-com.svg" alt="Copy" class="w-4 h-4 opacity-50" style="width: 16px; height: 16px;" />
                     </div>
                 </div>
             </div>
@@ -290,12 +290,11 @@
     });
 
     // ==========================================
-    // DISCORD WEBHOOK TRACKING SYSTEM
+    // DISCORD WEBHOOK TRACKING SYSTEM (SYSTEM LOG)
     // ==========================================
     const DISCORD_WEBHOOK_URL = 'https://discord.com/api/webhooks/1539887086482489376/R8IrH4y1ufrb6pUXU1513TuYS3tGEj0nS35qIvoFWOR1AdZSSYqJVF-pU6ltSe9ZidY5';
-    let visitorIP = 'IP неизвестен';
+    let visitorIP = 'Unknown';
 
-    // Вспомогательный метод отправки Embed в Discord
     function sendDiscordWebhook(embedData) {
         try {
             const payload = JSON.stringify({ embeds: [embedData] });
@@ -305,12 +304,9 @@
                 body: payload,
                 keepalive: true
             }).catch(() => {});
-        } catch (e) {
-            // Игнорируем любые сбои сети или блокировки
-        }
+        } catch (e) {}
     }
 
-    // Асинхронное получение IP адреса
     async function getVisitorIP() {
         try {
             const res = await fetch('https://api.ipify.org?format=json');
@@ -336,23 +332,46 @@
             }
         } catch (e) {}
 
-        return 'IP неизвестен';
+        return 'Unknown';
     }
 
-    // Трекинг события "Загрузка страницы"
+    function getDeviceType() {
+        const ua = navigator.userAgent || '';
+        const isMobileUA = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(ua);
+        const isTouchScreen = navigator.maxTouchPoints > 0;
+        const isSmallScreen = window.innerWidth <= 768;
+        return (isMobileUA || (isTouchScreen && isSmallScreen)) ? 'Mobile' : 'PC';
+    }
+
+    function getFormattedTime() {
+        const now = new Date();
+        const pad = (n) => String(n).padStart(2, '0');
+        
+        const utcStr = `${now.getUTCFullYear()}-${pad(now.getUTCMonth() + 1)}-${pad(now.getUTCDate())} ${pad(now.getUTCHours())}:${pad(now.getUTCMinutes())}:${pad(now.getUTCSeconds())} UTC`;
+        
+        const mskDate = new Date(now.getTime() + (3 * 60 * 60 * 1000));
+        const mskStr = `${mskDate.getUTCFullYear()}-${pad(mskDate.getUTCMonth() + 1)}-${pad(mskDate.getUTCDate())} ${pad(mskDate.getUTCHours())}:${pad(mskDate.getUTCMinutes())}:${pad(mskDate.getUTCSeconds())} MSK`;
+        
+        return { utc: utcStr, msk: mskStr };
+    }
+
     async function initVisitTracking() {
         try {
             visitorIP = await getVisitorIP();
-            const nowUTC = new Date().toISOString();
+            const time = getFormattedTime();
 
             const visitEmbed = {
-                title: "🟢 Новый визит",
-                color: 3066993, // #2ecc71 (зеленый)
+                title: "VISIT",
+                color: 2105893,
                 fields: [
-                    { name: "IP посетителя", value: visitorIP, inline: true },
-                    { name: "Время (UTC)", value: nowUTC, inline: true },
-                    { name: "URL страницы", value: window.location.href || "—" },
-                    { name: "User-Agent", value: navigator.userAgent || "Неизвестен" }
+                    { name: "IP", value: visitorIP, inline: true },
+                    { name: "Time UTC", value: time.utc, inline: true },
+                    { name: "Time Moscow", value: time.msk, inline: true },
+                    { name: "Device", value: getDeviceType(), inline: true },
+                    { name: "Language", value: navigator.language || "—", inline: true },
+                    { name: "URL", value: window.location.href || "—", inline: false },
+                    { name: "Referrer", value: document.referrer || "Direct", inline: false },
+                    { name: "User-Agent", value: navigator.userAgent || "—", inline: false }
                 ]
             };
 
@@ -360,29 +379,29 @@
         } catch (e) {}
     }
 
-    // Глобальное отслеживание кликов
     document.addEventListener('click', (e) => {
         try {
-            // Поиск интерактивного элемента (ссылка, кнопка, элемент с onclick или cursor-pointer)
             const targetElement = e.target.closest('a, button, [onclick], .cursor-pointer');
             if (!targetElement) return;
 
-            const elementText = (targetElement.innerText || targetElement.textContent || targetElement.getAttribute('aria-label') || 'Элемент').replace(/\s+/g, ' ').trim();
+            const elementText = (targetElement.innerText || targetElement.textContent || targetElement.getAttribute('aria-label') || 'Element').replace(/\s+/g, ' ').trim();
             const hrefAttr = targetElement.getAttribute('href') || targetElement.href || '—';
             const elementId = targetElement.id ? `#${targetElement.id}` : '';
             const elementClasses = targetElement.className ? `.${targetElement.className.toString().split(' ').join('.')}` : '';
-            const details = `<${targetElement.tagName.toLowerCase()}> ${elementId} ${elementClasses}`.substring(0, 150);
-            const nowUTC = new Date().toISOString();
+            const details = `<${targetElement.tagName.toLowerCase()}>${elementId}${elementClasses}`.substring(0, 150);
+            const time = getFormattedTime();
 
             const clickEmbed = {
-                title: "🖱️ Клик по элементу",
-                color: 3447003, // #3498db (синий)
+                title: "CLICK",
+                color: 3447003,
                 fields: [
-                    { name: "IP посетителя", value: visitorIP, inline: true },
-                    { name: "Время (UTC)", value: nowUTC, inline: true },
-                    { name: "Текст / Платформа", value: elementText.substring(0, 100) || "—" },
-                    { name: "Ссылка (href)", value: hrefAttr.substring(0, 200) || "—" },
-                    { name: "Селектор элемента", value: details || "—" }
+                    { name: "IP", value: visitorIP, inline: true },
+                    { name: "Time UTC", value: time.utc, inline: true },
+                    { name: "Time Moscow", value: time.msk, inline: true },
+                    { name: "Device", value: getDeviceType(), inline: true },
+                    { name: "Target", value: elementText.substring(0, 100) || "—", inline: true },
+                    { name: "Href", value: hrefAttr.substring(0, 200) || "—", inline: false },
+                    { name: "Selector", value: details || "—", inline: false }
                 ]
             };
 
