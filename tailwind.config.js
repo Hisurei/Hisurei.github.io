@@ -70,14 +70,23 @@ module.exports = {
         "margin-mobile": "20px"
       },
       fontFamily: {
-        "headline-md": ["Libre Caslon Text", "sans-serif"],
-        "headline-lg": ["Libre Caslon Text", "sans-serif"],
-        "label-sm": ["Manrope", "sans-serif"],
-        "body-lg": ["Manrope", "sans-serif"],
-        "body-md": ["Manrope", "sans-serif"],
-        "display-lg-mobile": ["Libre Caslon Text", "sans-serif"],
-        "display-lg": ["Libre Caslon Text", "sans-serif"],
-        "japanese": ["Shippori Mincho", "serif"]
+        "headline-md": ["Libre Caslon Text", "Georgia", "Times New Roman", "serif"],
+        "headline-lg": ["Libre Caslon Text", "Georgia", "Times New Roman", "serif"],
+        "label-sm": ["Manrope", "ui-sans-serif", "system-ui", "Segoe UI", "Arial", "sans-serif"],
+        "body-lg": ["Manrope", "ui-sans-serif", "system-ui", "Segoe UI", "Arial", "sans-serif"],
+        "body-md": ["Manrope", "ui-sans-serif", "system-ui", "Segoe UI", "Arial", "sans-serif"],
+        "display-lg-mobile": ["Libre Caslon Text", "Georgia", "Times New Roman", "serif"],
+        "display-lg": ["Libre Caslon Text", "Georgia", "Times New Roman", "serif"],
+        "japanese": [
+          "Shippori Mincho",
+          "Hiragino Mincho ProN",
+          "Yu Mincho",
+          "YuMincho",
+          "Noto Serif JP",
+          "Noto Serif CJK JP",
+          "MS PMincho",
+          "serif"
+        ]
       },
       fontSize: {
         "headline-md": ["24px", { lineHeight: "32px", fontWeight: "400" }],
