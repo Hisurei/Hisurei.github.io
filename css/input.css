@@ -19,18 +19,58 @@
 @font-face {
   font-family: 'Manrope';
   font-style: normal;
-  font-weight: 300 600;
+  font-weight: 300;
+  font-display: swap;
+  src: url('../fonts/manrope-v20-latin-300.woff2') format('woff2');
+}
+
+@font-face {
+  font-family: 'Manrope';
+  font-style: normal;
+  font-weight: 400;
   font-display: swap;
   src: url('../fonts/manrope-v20-latin-regular.woff2') format('woff2');
 }
 
-/* Shippori Mincho */
+@font-face {
+  font-family: 'Manrope';
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url('../fonts/manrope-v20-latin-500.woff2') format('woff2');
+}
+
+@font-face {
+  font-family: 'Manrope';
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url('../fonts/manrope-v20-latin-600.woff2') format('woff2');
+}
+
+/* Shippori Mincho (full Japanese: hiragana, katakana, kanji + Latin) */
 @font-face {
   font-family: 'Shippori Mincho';
   font-style: normal;
-  font-weight: 400 600;
+  font-weight: 400;
   font-display: swap;
-  src: url('../fonts/shippori-mincho-v17-latin-regular.woff2') format('woff2');
+  src: url('../fonts/shippori-mincho-v17-japanese-regular.woff2') format('woff2');
+}
+
+@font-face {
+  font-family: 'Shippori Mincho';
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url('../fonts/shippori-mincho-v17-japanese-500.woff2') format('woff2');
+}
+
+@font-face {
+  font-family: 'Shippori Mincho';
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url('../fonts/shippori-mincho-v17-japanese-600.woff2') format('woff2');
 }
 
 /* Material Symbols Outlined */
