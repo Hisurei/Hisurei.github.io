@@ -418,6 +418,7 @@
     // Typing effect for the browser tab title (pauses when tab is hidden)
     (function typewriterTitle() {
         const fullText = 'Hisurei';
+        const emptyTitle = '|'; // обычный символ — иначе браузер показывает URL
         let index = 0;
         let isDeleting = false;
         let timer = null;
@@ -439,31 +440,39 @@
             timer = setTimeout(fn, delay);
         }
 
+        function setTitle() {
+            document.title = index > 0 ? fullText.slice(0, index) : emptyTitle;
+        }
+
         function tick() {
             if (document.hidden) return;
 
             if (!isDeleting) {
-                index++;
-                document.title = fullText.slice(0, index);
-                if (index === fullText.length) {
+                // typing phase
+                if (index < fullText.length) {
+                    index++;
+                    setTitle();
+                    schedule(tick, typeSpeed);
+                } else {
+                    // full text shown — pause, then start deleting
                     schedule(() => {
                         isDeleting = true;
                         tick();
                     }, pauseFull);
-                    return;
                 }
-                schedule(tick, typeSpeed);
             } else {
-                index--;
-                document.title = fullText.slice(0, index) || '\u200B';
-                if (index === 0) {
+                // deleting phase
+                if (index > 0) {
+                    index--;
+                    setTitle();
+                    schedule(tick, deleteSpeed);
+                } else {
+                    // empty — pause, then start typing again
                     schedule(() => {
                         isDeleting = false;
                         tick();
                     }, pauseEmpty);
-                    return;
                 }
-                schedule(tick, deleteSpeed);
             }
         }
 
@@ -471,10 +480,12 @@
             if (document.hidden) {
                 clearTimer();
             } else {
+                // resume from current state without advancing past bounds
                 tick();
             }
         });
 
+        setTitle();
         tick();
     })();
 </script>
