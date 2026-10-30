@@ -5,6 +5,7 @@
     <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
     <script>document.documentElement.classList.add('js');</script>
     <title>Hisurei</title>
+    <link rel="icon" href="assets/bebebe67.png" type="image/png"/>
     
     <!-- Japanese webfont: preload so the hero title renders with the correct glyphs ASAP -->
     <link rel="preload" href="fonts/shippori-mincho-v17-japanese-regular.woff2" as="font" type="font/woff2" crossorigin/>
@@ -412,6 +413,71 @@
         </section>
     </div>
 </main>
+
+<script>
+    // Typing effect for the browser tab title (pauses when tab is hidden)
+    (function typewriterTitle() {
+        const fullText = 'Hisurei';
+        let index = 0;
+        let isDeleting = false;
+        let timer = null;
+
+        const typeSpeed = 200;
+        const deleteSpeed = 100;
+        const pauseFull = 2800;
+        const pauseEmpty = 800;
+
+        function clearTimer() {
+            if (timer !== null) {
+                clearTimeout(timer);
+                timer = null;
+            }
+        }
+
+        function schedule(fn, delay) {
+            clearTimer();
+            timer = setTimeout(fn, delay);
+        }
+
+        function tick() {
+            if (document.hidden) return;
+
+            if (!isDeleting) {
+                index++;
+                document.title = fullText.slice(0, index);
+                if (index === fullText.length) {
+                    schedule(() => {
+                        isDeleting = true;
+                        tick();
+                    }, pauseFull);
+                    return;
+                }
+                schedule(tick, typeSpeed);
+            } else {
+                index--;
+                document.title = fullText.slice(0, index) || '\u200B';
+                if (index === 0) {
+                    schedule(() => {
+                        isDeleting = false;
+                        tick();
+                    }, pauseEmpty);
+                    return;
+                }
+                schedule(tick, deleteSpeed);
+            }
+        }
+
+        document.addEventListener('visibilitychange', () => {
+            if (document.hidden) {
+                clearTimer();
+            } else {
+                tick();
+            }
+        });
+
+        tick();
+    })();
+</script>
 
 <script>
     // Subtle parallax for the ambient layer. It is rAF-throttled, limited to
